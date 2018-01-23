@@ -1,0 +1,6 @@
+org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.class
+org/jahia/modules/pageperformanceanalyser/actions/performanceCacheFlush.class
+org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.class
+org/jahia/modules/pageperformanceanalyser/ValueComparator.class
+org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.class
+org/jahia/modules/pageperformanceanalyser/actions/getElementForGraphs.class

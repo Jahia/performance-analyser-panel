@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <page-performance-analyzer j:dependencies="default"
+        <page-performance-analyzer j:dependencies="bootstrap3-components bootstrap3-core content-reports default"
                                  j:modulePriority="0"
                                  j:moduleType="module"
                                  j:title="page-performance-analyzer"
+                                 jcr:mixinTypes="jmix:hasExternalProviderExtension"
                                  jcr:primaryType="jnt:module">
+                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                  jcr:primaryType="jnt:moduleVersionFolder"
+                  j:staticMountPointProviderKey="module-page-performance-analyzer-1.0-SNAPSHOT">
+                    <src jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                 jcr:primaryType="jnt:folder">
+                        <main jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                     jcr:primaryType="jnt:folder">
+                            <resources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                             jcr:primaryType="jnt:folder">
+                                <jnt_performancePanel jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                           jcr:primaryType="jnt:nodeTypeFolder">
+                                    <html jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                              jcr:primaryType="jnt:templateTypeFolder">
+                                        <performancePanel.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                        <performancePanel.folderPicker.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                    </html>
+                                </jnt_performancePanel>
+                                <META-INF jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                               jcr:primaryType="jnt:metaInfFolder">
+                                    <definitions.cnd jcr:mixinTypes="jmix:sourceControl"
+                                         jcr:primaryType="jnt:definitionFile"/>
+                                </META-INF>
+                            </resources>
+                        </main>
+                    </src>
+                </sources>
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder"/>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.jackrabbit:jackrabbit-jcr-server:2.4.5-jahia7">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-server/2.4.5-jahia7/jackrabbit-jcr-server-2.4.5-jahia7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-server/2.4.5-jahia7/jackrabbit-jcr-server-2.4.5-jahia7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/jackrabbit/jackrabbit-jcr-server/2.4.5-jahia7/jackrabbit-jcr-server-2.4.5-jahia7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
