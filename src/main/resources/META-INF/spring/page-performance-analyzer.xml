@@ -5,12 +5,12 @@
     <bean class="org.jahia.modules.pageperformanceanalyser.filters.PerformanceAnalyserFilter">
         <property name="priority" value="0"/>
         <property name="applyOnConfigurations" value="module"/>
-        <property name="applyOnTemplateTypes" value="html" />
+        <property name="applyOnTemplateTypes" value="html,edit,html-.*" />
     </bean>
     <bean class="org.jahia.modules.pageperformanceanalyser.filters.PerformanceAnalyserFilterEnd">
         <property name="priority" value="15"/>
         <property name="applyOnConfigurations" value="module"/>
-        <property name="applyOnTemplateTypes" value="html" />
+        <property name="applyOnTemplateTypes" value="html,edit,html-.*" />
         <property name="cacheService" ref="JahiaCacheService"/>
     </bean>
     <bean class="org.jahia.modules.pageperformanceanalyser.filters.PerformancePanelFilter">
@@ -19,10 +19,12 @@
         <property name="cacheService" ref="JahiaCacheService"/>
     </bean>
     <bean class="org.jahia.modules.pageperformanceanalyser.actions.getElementForGraphs">
+        <property name="requiredPermission" value="runPagePerformanceAnalyse"/>
         <property name="name" value="getElementForGraph"/>
         <property name="cacheService" ref="JahiaCacheService"/>
     </bean>
     <bean class="org.jahia.modules.pageperformanceanalyser.actions.performanceCacheFlush">
+        <property name="requiredPermission" value="runPagePerformanceAnalyse"/>
         <property name="name" value="perfCacheFlush"/>
         <property name="cacheService" ref="JahiaCacheService"/>
     </bean>
