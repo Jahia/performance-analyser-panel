@@ -81,7 +81,7 @@
         </div>
         <div class="card-content">
             <p class="category"> <fmt:message key="titlePerformanceAnalyser1"/></p>
-            <h3 class="card-title"><span class="number">${totalCacheTimeSpent}</span> ms</h3>
+            <h3 class="card-title"><span class="number">${TotalTimeSpent2}</span> ms</h3>
         </div>
         <div class="card-footer">
             <div class="stats">

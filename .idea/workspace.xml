@@ -2,32 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67d76324-53ea-44e3-b1cb-37d6f813622e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readmeImg/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readmeImg/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readmeImg/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readmeImg/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/css/asc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/css/bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/css/desc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/css/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/ValueComparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/actions/getElementForGraphs.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/actions/performanceCacheFlush.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/css/tableSorter.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/javascript/Chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/javascript/jquery.tablersorter.widget.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/javascript/jquery.tablesorter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/javascript/performancePanel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.folderPicker.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/import/repository.xml" afterPath="$PROJECT_DIR$/src/main/import/repository.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.java" afterPath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.class" afterPath="$PROJECT_DIR$/target/classes/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.class" afterPath="$PROJECT_DIR$/target/classes/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/packaged-imports/META-INF/import.zip" afterPath="$PROJECT_DIR$/target/packaged-imports/META-INF/import.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/page-performance-analyzer-1.0-SNAPSHOT-sources.jar" afterPath="$PROJECT_DIR$/target/page-performance-analyzer-1.0-SNAPSHOT-sources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/page-performance-analyzer-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/page-performance-analyzer-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java" afterPath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java" afterPath="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/definitions.cnd" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/definitions.cnd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/spring/page-performance-analyzer.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/spring/page-performance-analyzer.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.jsp" afterPath="$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/resources/page-performance-analyzer.properties" afterPath="$PROJECT_DIR$/src/main/resources/resources/page-performance-analyzer.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/spring/page-performance-analyzer.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring/page-performance-analyzer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jnt_performancePanel/html/performancePanel.jsp" afterPath="$PROJECT_DIR$/target/classes/jnt_performancePanel/html/performancePanel.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,12 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PerformanceAnalyserFilter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PerformanceAnalyserFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="61" column="12" lean-forward="false" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="353">
+              <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+              <folding>
+                <element signature="e#2583#2599#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,28 +40,28 @@
       <file leaf-file-name="page-performance-analyzer.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring/page-performance-analyzer.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+            <state relative-caret-position="90">
+              <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tableSorter.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/css/tableSorter.css">
+      <file leaf-file-name="performancePanel.folderPicker.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.folderPicker.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="239" column="1" lean-forward="false" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="definitions.cnd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/definitions.cnd">
+      <file leaf-file-name="permissions.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/import/permissions.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -82,18 +70,18 @@
       <file leaf-file-name="PerformancePanelFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="69" column="7" lean-forward="false" selection-start-line="69" selection-start-column="7" selection-end-line="77" selection-end-column="5" />
+            <state relative-caret-position="194">
+              <caret line="50" column="76" lean-forward="false" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PerformanceAnalyserFilterEnd.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PerformanceAnalyserFilterEnd.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="147" column="160" lean-forward="false" selection-start-line="147" selection-start-column="160" selection-end-line="147" selection-end-column="160" />
+            <state relative-caret-position="1695">
+              <caret line="134" column="37" lean-forward="false" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -102,8 +90,18 @@
       <file leaf-file-name="performancePanel.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="19" column="91" lean-forward="false" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
+            <state relative-caret-position="179">
+              <caret line="83" column="73" lean-forward="false" selection-start-line="83" selection-start-column="73" selection-end-line="83" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="performancePanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/javascript/performancePanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -112,28 +110,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="975">
               <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blueprint.xsd" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.3.1/org.osgi.compendium-4.3.1.jar!/xmlns/blueprint/v1.0.0/blueprint.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1392">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-performance-analyzer.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/page-performance-analyzer.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="131" lean-forward="false" selection-start-line="15" selection-start-column="131" selection-end-line="15" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -171,6 +149,9 @@
       <find>loader</find>
       <find>tot</find>
       <find>card-ti</find>
+      <find>ChildrenTimeSpent</find>
+      <find>total</find>
+      <find>ChildrenTotalTimeSpent</find>
     </findStrings>
     <replaceStrings>
       <replace>pager</replace>
@@ -196,16 +177,17 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/ValueComparator.java" />
         <option value="$PROJECT_DIR$/src/main/resources/javascript/performancePanel.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/actions/getElementForGraphs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.folderPicker.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/actions/performanceCacheFlush.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/page-performance-analyzer.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/css/tableSorter.css" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring/page-performance-analyzer.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/import/permissions.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring/page-performance-analyzer.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java" />
       </list>
     </option>
   </component>
@@ -215,7 +197,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="35" />
     <option name="y" value="142" />
     <option name="width" value="1625" />
@@ -237,6 +219,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -373,9 +358,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -598,6 +580,13 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -620,11 +609,20 @@
       <workItem from="1515401063727" duration="25083000" />
       <workItem from="1516193115966" duration="20215000" />
       <workItem from="1516629165609" duration="4937000" />
+      <workItem from="1519204471720" duration="17275000" />
     </task>
+    <task id="LOCAL-00001" summary="Add permissions">
+      <created>1519397541778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519397541779</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147216000" />
+    <option name="totallyTimeSpent" value="164491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -641,17 +639,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35849056" sideWeight="0.495116" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35849056" sideWeight="0.495116" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2327044" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26495728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2327044" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26800978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -702,6 +700,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add permission" />
+    <MESSAGE value="Add permissions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add permissions" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -723,31 +726,24 @@
           <properties />
           <option name="timeStamp" value="115" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="resource.getNode().getIdentifier().equals(&quot;d2840bf7-8698-4bed-af8d-3aff41d87f50&quot;)" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="116" />
+      <option name="time" value="124" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="renderContext.getRequest().getAttribute(&quot;ChildrenLevel&quot;)" language="JAVA" />
+        <watch expression="childrenMap.get(&quot;childrenLevel&quot;+depthChildre)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="46" column="118" lean-forward="false" selection-start-line="46" selection-start-column="118" selection-end-line="46" selection-end-column="118" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/3.2.13.RELEASE/spring-tx-3.2.13.RELEASE-sources.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="106" column="36" lean-forward="false" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-human-task-core/6.0.0.Final-jahia/jbpm-human-task-core-6.0.0.Final-jahia-sources.jar!/org/jbpm/services/task/impl/TaskInstanceServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
@@ -808,7 +804,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#2583#2599#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -855,7 +853,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#2583#2599#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -909,13 +909,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/javascript/tableSorter.js" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/3.2.13.RELEASE/spring-tx-3.2.13.RELEASE-sources.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="106" column="36" lean-forward="false" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/3.2.13.RELEASE/spring-tx-3.2.13.RELEASE-sources.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/jbpm/jbpm-human-task-core/6.0.0.Final-jahia/jbpm-human-task-core-6.0.0.Final-jahia-sources.jar!/org/jbpm/services/task/impl/TaskInstanceServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -966,20 +960,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/javax/jcr/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="884" column="41" lean-forward="false" selection-start-line="884" selection-start-column="28" selection-end-line="884" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/javascript/performancePanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/jcr/jcr/2.0/jcr-2.0-sources.jar!/javax/jcr/Node.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/jahia/server/jahia-impl/7.1.0.0/jahia-impl-7.1.0.0.jar!/org/jahia/services/render/filter/RenderChain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -999,7 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="96" column="4" lean-forward="false" selection-start-line="96" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,14 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.folderPicker.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="61" column="12" lean-forward="false" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1038,7 +1010,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/tableSorter.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
+        <state relative-caret-position="3585">
           <caret line="239" column="1" lean-forward="false" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
           <folding />
         </state>
@@ -1054,56 +1026,90 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.compendium/4.3.1/org.osgi.compendium-4.3.1.jar!/xmlns/blueprint/v1.0.0/blueprint.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1392">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="975">
           <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/javascript/performancePanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="69" column="7" lean-forward="false" selection-start-line="69" selection-start-column="7" selection-end-line="77" selection-end-column="5" />
+        <state relative-caret-position="358">
+          <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java">
+    <entry file="file://$PROJECT_DIR$/src/main/import/permissions.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="147" column="160" lean-forward="false" selection-start-line="147" selection-start-column="160" selection-end-line="147" selection-end-column="160" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="19" column="91" lean-forward="false" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring/page-performance-analyzer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+        <state relative-caret-position="90">
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="61" column="12" lean-forward="false" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
+        <state relative-caret-position="353">
+          <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding>
+            <element signature="e#2583#2599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jahia/server/jahia-impl/7.1.0.0/jahia-impl-7.1.0.0.jar!/org/jahia/services/render/RenderContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformancePanelFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="50" column="76" lean-forward="false" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.folderPicker.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jnt_performancePanel/html/performancePanel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="83" column="73" lean-forward="false" selection-start-line="83" selection-start-column="73" selection-end-line="83" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring/page-performance-analyzer.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jahia/modules/pageperformanceanalyser/filters/PerformanceAnalyserFilterEnd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="134" column="37" lean-forward="false" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="37" />
           <folding />
         </state>
       </provider>

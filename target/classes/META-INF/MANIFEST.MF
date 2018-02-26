@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1516715994089
+Bnd-LastModified: 1519643042984
 Build-Jdk: 1.8.0_144
 Built-By: abrunner
 Bundle-Category: jahia-module
@@ -20,33 +20,33 @@ Implementation-Version: 1.0-SNAPSHOT
 Import-Package: javax.jcr;version="[2.0,3)",javax.servlet.http;version="
  [3.0,4)",org.jahia.exceptions,org.jahia.services.content,org.jahia.serv
  ices.render,org.jahia.bin,org.jahia.services.cache,org.jahia.services.r
- ender.filter,org.json,org.slf4j;version="[1.6,2)",org.jahia.taglibs.uti
- lity;version="[7.1,8)",org.jahia.taglibs.search;version="[7.1,8)",org.j
- ahia.taglibs.query;version="[7.1,8)",org.jahia.defaults.config.spring,o
- rg.jahia.taglibs.utility.constants;version="[7.1,8)",org.jahia.taglibs.
- uicomponents.loginform;version="[7.1,8)",org.jahia.taglibs.utility.i18n
- ;version="[7.1,8)",org.jahia.taglibs.uicomponents.image;version="[7.1,8
- )",org.apache.commons.lang;version="[2.6,3)",org.jahia.taglibs.template
- .pager;version="[7.1,8)",org.jahia.modules.external.vfs.factory,org.jah
- ia.services.content.decorator,org.jahia.services.sites,org.jahia.taglib
- s.template.layoutmanager;version="[7.1,8)",org.jahia.services.render.sc
- ripting,org.jahia.taglibs.jcr.node;version="[7.1,8)",org.apache.taglibs
- .standard.tag.rt.core,org.jahia.services,org.apache.taglibs.standard.te
- i,org.apache.taglibs.standard.tag.common.core,org.apache.taglibs.unstan
- dard;version="[7.1,8)",org.jahia.taglibs.uicomponents;version="[7.1,8)"
- ,org.jahia.services.content.nodetypes,org.jahia.taglibs;version="[7.1,8
- )",org.jahia.taglibs.uicomponents.i18n;version="[7.1,8)",org.jahia.serv
- ices.seo,org.jahia.taglibs.template.gwt;version="[7.1,8)",org.jahia.tag
- libs.template.include;version="[7.1,8)",org.jahia.taglibs.user;version=
- "[7.1,8)",org.apache.taglibs.standard.tag.rt.fmt,org.jahia.data.viewhel
- per.principal,org.apache.commons.lang.math;version="[2.6,3)",org.jahia.
- taglibs.utility.session;version="[7.1,8)",org.jahia.taglibs.template;ve
- rsion="[7.1,8)",org.jahia.taglibs.utility.siteproperties;version="[7.1,
- 8)",org.jahia.taglibs.jcr;version="[7.1,8)",org.apache.taglibs.standard
- .functions,org.jahia.taglibs.uicomponents.portlets;version="[7.1,8)",or
- g.apache.commons.id,org.jahia.taglibs.jcr.query;version="[7.1,8)",org.j
- ahia.utils,org.apache.naming.java,org.jahia.taglibs.functions;version="
- [7.1,8)",org.jahia.taglibs.internal.date;version="[7.1,8)"
+ ender.filter,org.json,org.slf4j;version="[1.6,2)",org.apache.commons.la
+ ng.math;version="[2.6,3)",org.jahia.taglibs.jcr.node;version="[7.1,8)",
+ org.apache.taglibs.standard.tei,org.jahia.taglibs.utility.session;versi
+ on="[7.1,8)",org.jahia.taglibs.search;version="[7.1,8)",org.jahia.servi
+ ces.content.nodetypes,org.jahia.services.render.scripting,org.jahia.uti
+ ls,org.jahia.data.viewhelper.principal,org.jahia.taglibs.template.gwt;v
+ ersion="[7.1,8)",org.apache.naming.java,org.apache.taglibs.standard.fun
+ ctions,org.jahia.taglibs.utility.siteproperties;version="[7.1,8)",org.j
+ ahia.taglibs;version="[7.1,8)",org.jahia.taglibs.utility.constants;vers
+ ion="[7.1,8)",org.jahia.taglibs.template;version="[7.1,8)",org.jahia.ta
+ glibs.template.layoutmanager;version="[7.1,8)",org.jahia.taglibs.query;
+ version="[7.1,8)",org.jahia.services.content.decorator,org.jahia.taglib
+ s.utility.i18n;version="[7.1,8)",org.jahia.taglibs.internal.date;versio
+ n="[7.1,8)",org.jahia.taglibs.user;version="[7.1,8)",org.jahia.defaults
+ .config.spring,org.jahia.taglibs.uicomponents.loginform;version="[7.1,8
+ )",org.jahia.modules.external.vfs.factory,org.apache.commons.lang;versi
+ on="[2.6,3)",org.jahia.services.seo,org.apache.taglibs.standard.tag.com
+ mon.core,org.jahia.taglibs.jcr;version="[7.1,8)",org.jahia.taglibs.uico
+ mponents;version="[7.1,8)",org.jahia.services,org.jahia.taglibs.uicompo
+ nents.portlets;version="[7.1,8)",org.apache.taglibs.standard.tag.rt.cor
+ e,org.jahia.taglibs.uicomponents.i18n;version="[7.1,8)",org.jahia.tagli
+ bs.jcr.query;version="[7.1,8)",org.jahia.taglibs.template.pager;version
+ ="[7.1,8)",org.apache.commons.id,org.jahia.taglibs.functions;version="[
+ 7.1,8)",org.apache.taglibs.standard.tag.rt.fmt,org.jahia.services.sites
+ ,org.apache.taglibs.unstandard;version="[7.1,8)",org.jahia.taglibs.uico
+ mponents.image;version="[7.1,8)",org.jahia.taglibs.template.include;ver
+ sion="[7.1,8)",org.jahia.taglibs.utility;version="[7.1,8)"
 Jahia-Depends: bootstrap3-components,bootstrap3-core,content-reports,def
  ault
 Jahia-Download-Sources-Available: true
@@ -76,13 +76,14 @@ Require-Capability: com.jahia.services.content;filter:="(nodetypes=jmix:
  :="(nodetypes=jnt:moduleVersionFolder)",com.jahia.services.content;filt
  er:="(nodetypes=jnt:modules)",com.jahia.services.content;filter:="(node
  types=jnt:nodeTypeFolder)",com.jahia.services.content;filter:="(nodetyp
- es=jnt:portletFolder)",com.jahia.services.content;filter:="(nodetypes=j
- nt:template)",com.jahia.services.content;filter:="(nodetypes=jnt:templa
- teTypeFolder)",com.jahia.services.content;filter:="(nodetypes=jnt:templ
- atesFolder)",com.jahia.services.content;filter:="(nodetypes=jnt:transla
- tion)",com.jahia.services.content;filter:="(nodetypes=jnt:viewFile)",co
- m.jahia.services.content;filter:="(nodetypes=mix:title)",osgi.ee;filter
- :="(&(osgi.ee=JavaSE)(version=1.7))"
+ es=jnt:permission)",com.jahia.services.content;filter:="(nodetypes=jnt:
+ portletFolder)",com.jahia.services.content;filter:="(nodetypes=jnt:temp
+ late)",com.jahia.services.content;filter:="(nodetypes=jnt:templateTypeF
+ older)",com.jahia.services.content;filter:="(nodetypes=jnt:templatesFol
+ der)",com.jahia.services.content;filter:="(nodetypes=jnt:translation)",
+ com.jahia.services.content;filter:="(nodetypes=jnt:viewFile)",com.jahia
+ .services.content;filter:="(nodetypes=mix:title)",osgi.ee;filter:="(&(o
+ sgi.ee=JavaSE)(version=1.7))"
 Specification-Title: page-performance-analyzer
 Specification-Vendor: Jahia Solutions Group SA
 Specification-Version: 1.0-SNAPSHOT

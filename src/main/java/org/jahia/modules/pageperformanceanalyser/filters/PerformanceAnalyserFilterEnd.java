@@ -37,6 +37,12 @@ public class PerformanceAnalyserFilterEnd extends AbstractFilter {
             //First thing to do get the date to be able to calculate the timer before doing anything
             Long dateTime = new Date().getTime();
 
+            HashMap<String, Long> childrenMap = (HashMap<String,Long>) renderContext.getRequest().getAttribute("childrenMap");
+
+            if(null==childrenMap){
+                childrenMap = new HashMap<String,Long>();
+            }
+
             Map<String, Map<String, Object>> responseTimeStack = (Map<String, Map<String, Object>>) renderContext.getRequest().getAttribute("responseTimeStack");
 
             //To make sure to not remove anything from the store elements
@@ -56,23 +62,24 @@ public class PerformanceAnalyserFilterEnd extends AbstractFilter {
                 }
 
                 String currentDepth = (String) renderContext.getRequest().getAttribute("depth");
+                int currentDepthInt = Integer.parseInt(currentDepth);
 
                 renderContext.getRequest().setAttribute("depth", String.valueOf(Integer.parseInt(depth) - 1));
+
                 if(Integer.parseInt(depth)==Integer.parseInt(currentDepth)){
                     long timeSpent = (dateTime - date.getTime());
-                    totalTimeSpent += timeSpent;
-                    //Remove children time if there is any
-                    if(renderContext.getRequest().getAttribute("ChildrenTimeSpent") != null ){
-                        if( Integer.parseInt(currentDepth) < (Integer) renderContext.getRequest().getAttribute("ChildrenLevel")){
-                            timeSpent -= (Long)renderContext.getRequest().getAttribute("ChildrenTimeSpent");
-                            totalTimeSpent -= (Long)renderContext.getRequest().getAttribute("ChildrenTimeSpent");
-                            //Reset ChildrenTime if there were one
-                            if(Integer.parseInt(currentDepth)==1){
-                                renderContext.getRequest().removeAttribute("ChildrenTimeSpent");
-                            }
-                        }
 
+                    //Remove children time if there is any
+                    int depthChildren = currentDepthInt + 1;
+                    if( null != childrenMap.get("childrenLevel"+depthChildren) ){
+                        timeSpent -= childrenMap.get("childrenLevel"+depthChildren);
                     }
+
+                    //Total time spent
+                    totalTimeSpent += timeSpent;
+
+                    //Total time Spent for the childrenMAp
+                    long ChildrenTotalTimeSpent = timeSpent;
 
                     renderContext.getRequest().setAttribute("totalTimeSpent", totalTimeSpent);
                     logger.info("timespent: " + timeSpent + " - totalTimeSpent - " + totalTimeSpent + "ms");
@@ -80,50 +87,44 @@ public class PerformanceAnalyserFilterEnd extends AbstractFilter {
                     //All the infos needs to show:
                     Map<String,String> infos = getInfos(resource.getNode(), timeSpent);
 
-                    //Remove double entry the hidden element; if uncomment, you should comment the storeInCache(resource.getPath()+element, infos);
-                    /*
-
-                    String ressourcePath = resource.getPath();
-
-                    if(resource.getPath().contains(".hidden.")){
-                        String startPath = ressourcePath.substring(0,ressourcePath.indexOf(".hidden."));
-                        if(!keysStartWith(startPath,ressourcePath, listCacheToFlush.keySet())){
-                            storeInCache(resource.getPath()+element, infos);
-                        }
-                    }else {
-                        storeInCache(resource.getPath()+element, infos);
-                    }*/
-
                     //Store element
-                    storeInCache(resource.getPath()+element, infos);
+                    try {
+                        storeInCache(resource.getNode().getIdentifier(), infos);
+                    } catch (RepositoryException e) {
+                        logger.info("PagePerformance : Impossible to save in cache : " + resource.getPath());
+                        e.printStackTrace();
+                    }
 
                     storeInCache("TotalTimeSpent", totalTimeSpent);
                     element++;
                     renderContext.getRequest().setAttribute("NumberOfElement",element);
-                    int currentDepthInt = Integer.parseInt(currentDepth);
-                    //If the depth is over 1 had the
-                    if( currentDepthInt > 1){
-                        int childrenLevel = 1;
-                        if(null != renderContext.getRequest().getAttribute("ChildrenLevel")){
-                            childrenLevel = (Integer) renderContext.getRequest().getAttribute("ChildrenLevel");
-                        }
-                        if (currentDepthInt <= childrenLevel) {
-                            long ChildrenTotalTimeSpent = timeSpent;
 
-                            if (renderContext.getRequest().getAttribute("ChildrenTimeSpent") != null) {
-                                ChildrenTotalTimeSpent += (Long) renderContext.getRequest().getAttribute("ChildrenTimeSpent");
-                            }
-                            renderContext.getRequest().setAttribute("ChildrenTimeSpent", ChildrenTotalTimeSpent);
-                            renderContext.getRequest().setAttribute("ChildrenLevel", Integer.parseInt(currentDepth));
-                        }
+                    int childrenLevel = 1;
+                    if(null != renderContext.getRequest().getAttribute("ChildrenLevel")){
+                        childrenLevel = (Integer) renderContext.getRequest().getAttribute("ChildrenLevel");
+                    }else {
+                        renderContext.getRequest().setAttribute("ChildrenLevel", currentDepthInt);
                     }
+                    //If the currentDepth is under or equal to the children level we add the time or/and remove the element from the map
+                    if (currentDepthInt <= childrenLevel) {
+                        //if there is already a children time with the same level we add it to the map
+                        if(null != childrenMap.get("childrenLevel"+currentDepth)){
+                            ChildrenTotalTimeSpent += childrenMap.get("childrenLevel"+currentDepth);
+                        }
+                        int levelUp = currentDepthInt + 1;
+                        if(null != childrenMap.get("childrenLevel"+levelUp)){
+                            ChildrenTotalTimeSpent += childrenMap.get("childrenLevel"+levelUp);
+                            childrenMap.remove("childrenLevel"+levelUp);
+                        }
+
+                    }
+                    //Add the childrenLevel, if the current element is higher than the current children level
+                    childrenMap.put("childrenLevel"+currentDepth,ChildrenTotalTimeSpent);
+                    renderContext.getRequest().setAttribute("childrenMap",childrenMap);
+                    renderContext.getRequest().setAttribute("ChildrenLevel", currentDepthInt);
                 }
-
                 logger.info("FINALIZE (" + depth + ") - stopping counter for " + resource.getPath());
-
             }
-
-
         }
         super.finalize(renderContext, resource, renderChain);
     }
@@ -165,14 +166,4 @@ public class PerformanceAnalyserFilterEnd extends AbstractFilter {
 
         return infos;
     }
-
-    private boolean keysStartWith(String startWith,String pathToCompare, Set<String> keys){
-        for(String key:keys){
-            if(key.startsWith(startWith) && !key.equals(pathToCompare)){
-                return true;
-            }
-        }
-        return false;
-    }
-
 }
