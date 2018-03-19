@@ -59,16 +59,16 @@
     <div class="jumbotron">
         <h1 style="text-align: center;"><fmt:message key="performancePanelPerformanceAnalyser"/></h1>
         <div class="selectPage">
-            <p><fmt:message key="infoPagePerfomanceAnalyser"/></p>
+            <p><fmt:message key="pagePerformanceAnalyser.infoPage"/></p>
             <div>
                 <button type="button" class="btn-small" onclick="callTreeView('pathTxtRDA')">
                     <span class="glyphicon glyphicon-folder-open"></span>
-                    &nbsp;<fmt:message key="choosePagePerformanceAnalyser"/>
+                    &nbsp;<fmt:message key="pagePerformanceAnalyser.choosePageToAnalyse"/>
                 </button>
                 <input type="text" id="pathTxtRDA" name="pathTxtRDA" class="pageInput" readonly="true" value="${pagePath}" >
             </div>
             <button type="button" class="btn btn-lg btn-success" onclick="runPerformancePanel($('#pathTxtRDA').val(), '${renderContext.site.path}')">
-                <fmt:message key="runPagePerformanceAnalyser"/>&nbsp;
+                <fmt:message key="pagePerformanceAnalyser.launch"/>&nbsp;
                 <span class="glyphicon glyphicon-ok"></span>
             </button>
         </div>
@@ -80,8 +80,8 @@
             <i class="glyphicon glyphicon-time"></i>
         </div>
         <div class="card-content">
-            <p class="category"> <fmt:message key="titlePerformanceAnalyser1"/></p>
-            <h3 class="card-title"><span class="number">${TotalTimeSpent2}</span> ms</h3>
+            <p class="category"> <fmt:message key="pagePerformanceAnalyser.title.totalTime"/></p>
+            <h3 class="card-title"><span class="number">${TotalTimeSpent2}</span> <p class="category"> <fmt:message key="pagePerformanceAnalyser.title.ms"/></h3>
         </div>
         <div class="card-footer">
             <div class="stats">
@@ -93,7 +93,7 @@
             <i class="glyphicon glyphicon-info-sign"></i>
         </div>
         <div class="card-content">
-            <p class="category"><fmt:message key="titlePerformanceAnalyser3"/></p>
+            <p class="category"><fmt:message key="pagePerformanceAnalyser.title.elementLoad"/></p>
             <h3 class="card-title"><span class="number">${totalCacheElements}</span></h3>
         </div>
         <div class="card-footer">
@@ -106,7 +106,7 @@
             <i class="glyphicon glyphicon-file"></i>
         </div>
         <div class="card-content">
-            <p class="category"><fmt:message key="pagePerformanceAnalyser"/> </p>
+            <p class="category"><fmt:message key="pagePerformanceAnalyser.page"/> </p>
             <h3 class="card-title">${pageName}</h3>
         </div>
         <div class="card-footer">
@@ -118,7 +118,7 @@
     <!-- Table -->
     <div class="stylePager pager">
         <form>
-            <label  class="labels" for="pagesize"><fmt:message key="elementsPerPagePerformanceAnalyser"/> </label>
+            <label  class="labels" for="pagesize"><fmt:message key="pagePerformanceAnalyser.elementsPerPage"/> </label>
             <select class="pagesize" id="pagesize" style="width: auto">
                 <option value="10">10</option>
                 <option value="20">20</option>
@@ -131,11 +131,11 @@
         <table id="perfTable" class="table table-bordered table-striped table-hover table-sortable tablesorter">
             <thead>
                 <tr>
-                    <th><fmt:message key="uuidPerformanceAnalyser"/> </th>
-                    <th><fmt:message key="pathPerformanceAnalyser"/></th>
-                    <th><fmt:message key="nodeTypePerformanceAnalyser"/> </th>
-                    <th><fmt:message key="namePerformanceAnalyser"/></th>
-                    <th><fmt:message key="timePerformanceAnalyser"/> </th>
+                    <th><fmt:message key="pagePerformanceAnalyser.UUID"/> </th>
+                    <th><fmt:message key="pagePerformanceAnalyser.path"/></th>
+                    <th><fmt:message key="pagePerformanceAnalyser.primaryNodeType"/> </th>
+                    <th><fmt:message key="pagePerformanceAnalyser.name"/></th>
+                    <th><fmt:message key="pagePerformanceAnalyser.time"/> </th>
                 </tr>
             </thead>
             <tbody>
@@ -174,9 +174,9 @@
             <div>
                 <h1 id="titleChart"></h1>
                 <div class="category-chart" style="text-align: right;">
-                    <button id='pie' onclick="change('pie','${detailDisplayUrl}')" class="btn-small"><fmt:message key="piePerformanceAnalyser"/> </button>
-                    <button id='bar' onclick="change('horizontalBar','${detailDisplayUrl}')" class="btn-small"><fmt:message key="barPerformanceAnalyser"/></button>
-                    <label class="labels"><fmt:message key="elementsPerformanceAnalyser"/> </label>
+                    <button id='pie' onclick="change('pie','${detailDisplayUrl}')" class="btn-small"><fmt:message key="pagePerformanceAnalyser.pie"/> </button>
+                    <button id='bar' onclick="change('horizontalBar','${detailDisplayUrl}')" class="btn-small"><fmt:message key="pagePerformanceAnalyser.bar"/></button>
+                    <label class="labels"><fmt:message key="pagePerformanceAnalyser.elements"/> </label>
                     <select id="numberOfElement" style="width: auto">
                         <option value="5">5</option>
                         <option value="10">10</option>
