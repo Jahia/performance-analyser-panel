@@ -29,7 +29,7 @@ You can now see on the bottom of the page, a pie that show you the 20 slowest el
 
 ![Bottom Infos](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/7.png "BottomInfos")
 
-This graphs can be show as a bar charts, and the number of elements to show can change between 5 and 20.
+These graphs can be show as a bar charts, and the number of elements to show can change between 5 and 20.
 
 ![Bar Infos](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/8.png "BarInfos")
 
