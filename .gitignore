@@ -1,5 +1,9 @@
 target
-.page-performance-analyzer.iml
+*.iml
+*.ipr
 .idea
 .idea/workspace.xml
 .DS_Store
+/.classpath
+/.project
+/.settings
