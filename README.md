@@ -17,15 +17,15 @@ Then just select the page you want from your webSite on the tree:
 To run the page analyse, you have to press on :
 ![Launch Button ](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/4.png "LaunchButton")
 
-Then you will see on the top all the informations, that corresponds to the total time take to load all the elements, the number of elements and the name of the page.
+Then you will see on the top all the information, that corresponds to the total time take to load all the elements, the number of elements and the name of the page.
 
 ![Top Infos](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/5.png "TopInfos")
 
-Then you will see a table with all the elements informations. You can order the table, and change the number of element in one page.
+Then you will see a table with all the elements information. You can order the table, and change the number of element in one page.
 
 ![Table Infos](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/6.png "TableInfos")
 
-You can now see on the bottom of the page, a pie that show you the 20 slowest element of the page:
+You can now see on the bottom of the page, a pie that shows you the 20 slowest elements of the page:
 
 ![Bottom Infos](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/7.png "BottomInfos")
 
