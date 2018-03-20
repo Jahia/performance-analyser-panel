@@ -27,7 +27,7 @@
             $('#windowPathPicker').modal({
                 show: 'true'
             });
-            var actionUrl = "${currentNodePath}" + ".PathPicker.do";
+            var actionUrl = "${currentNodePath}" + ".pickerPath.do";
             $.getJSON( actionUrl, function( data ) {
                 $('#treeviewpath').treeview({
                     color: "#428bca",
