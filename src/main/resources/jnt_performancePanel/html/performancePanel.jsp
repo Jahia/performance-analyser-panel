@@ -29,7 +29,7 @@
                 {
                     //Let the table pager and orderable
                     $("#perfTable")
-                        .tablesorter()
+                        .tablesorter( {sortList: [[4,1]]} )
                         .tablesorterPager({container: $(".pager"), output:'{page}/{totalPages}'});
                     change('pie','${detailDisplayUrl}');
 
@@ -135,7 +135,7 @@
                     <th><fmt:message key="pagePerformanceAnalyser.path"/></th>
                     <th><fmt:message key="pagePerformanceAnalyser.primaryNodeType"/> </th>
                     <th><fmt:message key="pagePerformanceAnalyser.name"/></th>
-                    <th><fmt:message key="pagePerformanceAnalyser.time"/> </th>
+                    <th data-sortinitialorder="desc"><fmt:message key="pagePerformanceAnalyser.time"/> </th>
                 </tr>
             </thead>
             <tbody>
