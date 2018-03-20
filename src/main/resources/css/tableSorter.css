@@ -94,7 +94,7 @@ table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSo
     margin-top: 8px;
     box-shadow: none !important;
     border: none;
-    width: 20%;
+    min-width: 20%;
 }
 
 
@@ -237,4 +237,55 @@ table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSo
     font-size: 21px;
     line-height: 22px;
     font-weight: 200;
+}
+
+
+
+/*Checkboxes styles*/
+.boxes {
+    width: 125px;
+    margin: auto;
+    display:inline-block;
+}
+
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-size: 12px !important;
+    padding: 6px 10px 6px 10px !important;
+    text-decoration: none !important;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #333;
+    opacity: .6;
+    position: absolute;
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
+    top:5px;
+}
+
+input[type="checkbox"]:checked + label:before {
+    width: 10px;
+    top: 0px;
+    left: 10px;
+    border-radius: 0;
+    opacity: 1;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
 }

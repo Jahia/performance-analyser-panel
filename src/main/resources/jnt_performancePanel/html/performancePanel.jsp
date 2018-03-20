@@ -60,14 +60,29 @@
         <h1 style="text-align: center;"><fmt:message key="performancePanelPerformanceAnalyser"/></h1>
         <div class="selectPage">
             <p><fmt:message key="pagePerformanceAnalyser.infoPage"/></p>
-            <div>
+
+            <div style="display: inline-block">
                 <button type="button" class="btn-small" onclick="callTreeView('pathTxtRDA')">
                     <span class="glyphicon glyphicon-folder-open"></span>
                     &nbsp;<fmt:message key="pagePerformanceAnalyser.choosePageToAnalyse"/>
                 </button>
                 <input type="text" id="pathTxtRDA" name="pathTxtRDA" class="pageInput" readonly="true" value="${pagePath}" >
             </div>
-            <button type="button" class="btn btn-lg btn-success" onclick="runPerformancePanel($('#pathTxtRDA').val(), '${renderContext.site.path}')">
+            <!-- Flush Cache Checkbox, check the box if empty  -->
+            <div class="boxes">
+                <c:choose >
+                    <c:when test="${flushCachePerf}">
+                        <input type="checkbox" id="flushCacheCheck"  checked >
+                    </c:when>
+                    <c:otherwise>
+                        <input type="checkbox" id="flushCacheCheck" >
+                    </c:otherwise>
+                </c:choose>
+
+                <label for="flushCacheCheck">Flush cache</label>
+            </div>
+            </br>
+            <button type="button" class="btn btn-lg btn-success" onclick="runPerformancePanel($('#pathTxtRDA').val(), '${renderContext.site.path}', $('#flushCacheCheck').is(':checked'))">
                 <fmt:message key="pagePerformanceAnalyser.launch"/>&nbsp;
                 <span class="glyphicon glyphicon-ok"></span>
             </button>
@@ -81,7 +96,7 @@
         </div>
         <div class="card-content">
             <p class="category"> <fmt:message key="pagePerformanceAnalyser.title.totalTime"/></p>
-            <h3 class="card-title"><span class="number">${TotalTimeSpent2}</span> <p class="category"> <fmt:message key="pagePerformanceAnalyser.title.ms"/></h3>
+            <h3 class="card-title"><span class="number">${TotalTimeSpent2}</span> <fmt:message key="pagePerformanceAnalyser.title.ms"/> <p class="category"> </h3>
         </div>
         <div class="card-footer">
             <div class="stats">

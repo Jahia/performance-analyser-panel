@@ -67,7 +67,7 @@ function change(newType, url) {
 };
 
 
-function runPerformancePanel(path, sitePath){
+function runPerformancePanel(path, sitePath, flush){
     $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
     if(path == sitePath){
         alert("Please select a page");
@@ -78,7 +78,8 @@ function runPerformancePanel(path, sitePath){
             url:path +".perfCacheFlush.do",
             context: document.body,
             data: {
-                path: path
+                path: path,
+                flush: flush
             },
             success: function(){
                 $.ajax({ url: path + ".html?perfAnalyse",

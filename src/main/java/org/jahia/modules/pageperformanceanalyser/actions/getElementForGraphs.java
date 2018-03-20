@@ -38,7 +38,7 @@ public class getElementForGraphs extends Action {
         Iterator<Object> iterator = cacheInstance.getKeys().iterator();
         while (iterator.hasNext()) {
             String key = (String) iterator.next();
-            if(!key.equals("PageNameCachePerf") && !key.equals("PagePathCachePerf") && !key.equals("TotalTimeSpent") ){
+            if(!key.equals("PageNameCachePerf") && !key.equals("PagePathCachePerf") && !key.equals("TotalTimeSpent") && !key.equals("flushCachePerf") ){
                 if(cacheInstance.get(key)!=null){
                     Map<String, String> infos = (Map<String, String>) cacheInstance.get(key);
                     if(infos.get("timeSpent")!=null){

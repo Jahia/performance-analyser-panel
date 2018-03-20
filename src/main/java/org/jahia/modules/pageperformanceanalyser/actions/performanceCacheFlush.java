@@ -29,9 +29,10 @@ public class performanceCacheFlush extends Action {
     @Override
     public ActionResult doExecute(HttpServletRequest httpServletRequest, RenderContext renderContext, Resource resource, JCRSessionWrapper jcrSessionWrapper, Map<String, List<String>> map, URLResolver urlResolver) throws Exception {
 
-        String path = getParameter(map,"path"); //Path of the page
-        JCRNodeWrapper page = jcrSessionWrapper.getNode(path);
-        String pageName = page.getDisplayableName();
+        String      path        =   getParameter(map,"path"); //Path of the page
+        boolean     flushPage   =   Boolean.parseBoolean(getParameter(map,"flush"));
+        JCRNodeWrapper page     =   jcrSessionWrapper.getNode(path);
+        String      pageName    =   page.getDisplayableName();
 
         Cache<Object, Object> cacheInstance = null;
 
@@ -41,9 +42,12 @@ public class performanceCacheFlush extends Action {
 
         cacheInstance.put("PageNameCachePerf",pageName);
         cacheInstance.put("PagePathCachePerf", path);
-
+        cacheInstance.put("flushCachePerf", flushPage);
         //We need to flush the page to go through the process. What if someone go the page at the same time?
-        CacheHelper.flushOutputCachesForPath(path,true);
+        if(flushPage){
+            CacheHelper.flushOutputCachesForPath(path,true);
+        }
+
 
         /* Try to flush the template cache doesnt work. With an option to activate it or not.
         Template template = RenderService.getInstance().resolveTemplate(new org.jahia.services.render.Resource(

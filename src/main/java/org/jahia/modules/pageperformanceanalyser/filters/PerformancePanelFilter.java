@@ -49,8 +49,9 @@ public class PerformancePanelFilter extends AbstractFilter {
                     renderContext.getRequest().setAttribute("PagePathCachePerf", (String) cacheInstance.get(key));
                 } else if (key.equals("TotalTimeSpent")){
                     renderContext.getRequest().setAttribute("TotalTimeSpent2", (Long) cacheInstance.get(key));
-                }
-                else {
+                }else if (key.equals("flushCachePerf")){
+                    renderContext.getRequest().setAttribute("flushCachePerf", (boolean) cacheInstance.get(key));
+                } else {
                     Map<String, String> infos = (Map<String, String>) cacheInstance.get(key);
                     if (infos.get("timeSpent") != null) {
                         totalTimeSpent += Long.parseLong(infos.get("timeSpent"));
