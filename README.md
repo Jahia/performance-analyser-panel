@@ -1,5 +1,5 @@
 # Performance Analyser Panel
-The performance panel analyser let you analyse a page of your Jahia DX website, to find out what is the reason for the slowdowns.
+The performance panel analyser let you analyse a page of your Jahia DX website, to find out what is the reason for the slowdowns. All times, you see are the server's time only.
 
 ## Getting Started
 To get started, you need to add the module to your webSite. Then you will find a new element on your "Site settings" page called "Performance Panel".

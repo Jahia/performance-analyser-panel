@@ -79,7 +79,7 @@
                     </c:otherwise>
                 </c:choose>
 
-                <label for="flushCacheCheck">Flush cache</label>
+                <label for="flushCacheCheck"><fmt:message key="pagePerformanceAnalyser.flushCache"/></label>
             </div>
             </br>
             <button type="button" class="btn btn-lg btn-success" onclick="runPerformancePanel($('#pathTxtRDA').val(), '${renderContext.site.path}', $('#flushCacheCheck').is(':checked'))">
