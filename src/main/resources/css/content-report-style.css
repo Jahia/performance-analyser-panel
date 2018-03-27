@@ -184,10 +184,7 @@
   visibility: hidden;
 }
 
-div[jahiatype=mainmodule] {
-   background-color: #fff;
-   height: 100%
-}
+
 
 table.dataTable thead th,
 table.dataTable thead td {

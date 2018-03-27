@@ -42,7 +42,7 @@ public class getElementForGraphs extends Action {
                 if(cacheInstance.get(key)!=null){
                     Map<String, String> infos = (Map<String, String>) cacheInstance.get(key);
                     if(infos.get("timeSpent")!=null){
-                        data.put(key,Long.parseLong(infos.get("timeSpent")));
+                        data.put(key + "__/__" + infos.get("j:nodename"),Long.parseLong(infos.get("timeSpent")));
                     }
                 }
 
@@ -55,13 +55,16 @@ public class getElementForGraphs extends Action {
         sorted_map.putAll(data);                                                                                        //Map order desc
         List<String> keys                   =   new ArrayList<String>(sorted_map.keySet());
         List<String> keyToSend              =   new ArrayList<String>();
+        List<String> keysToDisplay          =   new ArrayList<String>();
         List<Object> dataToSend             =   new ArrayList<Object>();
 
         //Loop to get only the number of element I want
         if(numberOfElementToShow!=-1 ) {
             if(numberOfElementToShow < keys.size() - 1){
                 for (int i = keys.size() - 1; i >= keys.size() - 1 - numberOfElementToShow; i--) {
-                    keyToSend.add(keys.get(i));
+                    String[] tableKey  = keys.get(i).split("__/__");
+                    keyToSend.add(tableKey[0]);
+                    keysToDisplay.add(tableKey[1]);
                     dataToSend.add(data.get(keys.get(i)));
                 }
             }else{
@@ -80,6 +83,7 @@ public class getElementForGraphs extends Action {
 
         JSONObject json = new JSONObject();
         json.put("keys",keyToSend);
+        json.put("displayName", keysToDisplay);
         json.put("data",dataToSend);
 
         return new ActionResult(200,null,json);

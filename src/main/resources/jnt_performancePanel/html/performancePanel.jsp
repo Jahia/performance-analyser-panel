@@ -199,9 +199,13 @@
                         <option value="20" selected="selected">20</option>
                     </select>
                 </div>
-            </div>
 
-            <canvas id="myChart" style=" min-height: 100%"></canvas>
+            </div>
+            <canvas id="myChart" style="min-height: 100%">
+
+            </canvas>
+            <span id="chartjs-tooltip" class="tooltip" style="width: auto" ></span>
         </div>
+
     </div>
 </div>

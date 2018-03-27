@@ -289,3 +289,18 @@ input[type="checkbox"]:checked + label:before {
     -webkit-transition: all .12s, border-color .08s;
     transition: all .12s, border-color .08s;
 }
+
+.tooltip {
+    position: relative !important;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.87);
+}
+.tooltip H1{
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+
+}
