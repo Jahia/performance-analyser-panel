@@ -15,7 +15,7 @@
                     <files jcr:primaryType="jnt:folder"/>
                     <contents jcr:primaryType="jnt:contentFolder"/>
                     <site-settings-base j:view="siteSettings" jcr:primaryType="jnt:template">
-                        <performance-panel j:defaultTemplate="true"
+                        <performance-panel j:defaultTemplate="false"
                                   j:hiddenTemplate="false"
                                   jcr:primaryType="jnt:contentTemplate">
                             <j:translation_en jcr:language="en"
