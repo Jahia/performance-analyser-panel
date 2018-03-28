@@ -57,7 +57,7 @@
 
 
   <artifactId>page-performance-analyzer</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>page-performance-analyzer</name>
   <description>This is the custom module (page-performance-analyzer) for running on a Digital Experience Manager server.</description>
