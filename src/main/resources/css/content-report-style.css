@@ -424,8 +424,8 @@ button.btn.btn-default .glyphicon {
   text-shadow: none;
 }
 
-.node-treeviewpath {
-  color: #424242 !important;
+ul .node-treeviewpath {
+  color: #424242;
 }
 
 .treeview .list-group {
@@ -513,4 +513,7 @@ input.datepicker.form-control.invalid {
   margin-left: 0;
 }
 
+div #windowPathPicker{
+    padding: 40px;
+}
 
