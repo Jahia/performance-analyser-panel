@@ -56,14 +56,14 @@
 
 
   <artifactId>page-performance-analyzer</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>page-performance-analyzer</name>
   <description>This is the custom module (page-performance-analyzer) for running on a Digital Experience Manager server.</description>
   <scm>
     <connection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</developerConnection>
-    <tag>page-performance-analyzer-1.0.1</tag>
+    <tag>HEAD</tag>
   </scm>
   <properties>
     <jahia-depends>bootstrap3-components,bootstrap3-core,default</jahia-depends>
