@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
-public class getElementForGraphs extends Action {
+public class GetElementForGraphs extends Action {
     private CacheService cacheService;
 
 

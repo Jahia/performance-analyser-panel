@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
-public class performanceCacheFlush extends Action {
+public class PerformanceCacheFlush extends Action {
     private CacheService cacheService;
 
 

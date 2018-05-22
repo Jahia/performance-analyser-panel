@@ -18,12 +18,12 @@
         <property name="applyOnNodeTypes" value="jnt:performancePanel"/>
         <property name="cacheService" ref="JahiaCacheService"/>
     </bean>
-    <bean class="org.jahia.modules.pageperformanceanalyser.actions.getElementForGraphs">
+    <bean class="org.jahia.modules.pageperformanceanalyser.actions.GetElementForGraphs">
         <property name="requiredPermission" value="runPagePerformanceAnalyse"/>
         <property name="name" value="getElementForGraph"/>
         <property name="cacheService" ref="JahiaCacheService"/>
     </bean>
-    <bean class="org.jahia.modules.pageperformanceanalyser.actions.performanceCacheFlush">
+    <bean class="org.jahia.modules.pageperformanceanalyser.actions.PerformanceCacheFlush">
         <property name="requiredPermission" value="runPagePerformanceAnalyse"/>
         <property name="name" value="perfCacheFlush"/>
         <property name="cacheService" ref="JahiaCacheService"/>
