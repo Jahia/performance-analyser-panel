@@ -62,7 +62,7 @@
             <p><fmt:message key="pagePerformanceAnalyser.infoPage"/></p>
 
             <div style="display: inline-block">
-                <button type="button" class="btn-small" onclick="callTreeView('pathTxtRDA')">
+                <button type="button" class="btn-small" onclick="callTreeView('pathTxtRDA', '${renderContext.site.path}')">
                     <span class="glyphicon glyphicon-folder-open"></span>
                     &nbsp;<fmt:message key="pagePerformanceAnalyser.choosePageToAnalyse"/>
                 </button>

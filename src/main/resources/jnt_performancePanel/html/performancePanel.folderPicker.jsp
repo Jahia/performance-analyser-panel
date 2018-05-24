@@ -18,30 +18,83 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%--@elvariable id="vfsFactory" type="org.jahia.modules.external.vfs.factory.VFSMountPointFactory"--%>
-<template:addResources type="javascript" resources="bootstrap/bootstrap-treeview.js" />
+<template:addResources type="javascript" resources="jquery.fancytree-all-deps.min.js" />
+<template:addResources type="css" resources="ui.fancytree.min.css"/>
 <c:url value="${url.base}${docPath}${renderContext.mainResource.node.path}" var="currentNodePath"/>
 
 <template:addResources>
     <script type="text/javascript">
-        function callTreeView(targetId) {
+        var firstLoad = true;
+        var glyphOpts = {
+            map: {
+                doc: "glyphicon glyphicon-folder-close",
+                docOpen: "glyphicon glyphicon-folder-open",
+                checkbox: "glyphicon glyphicon-unchecked",
+                checkboxSelected: "glyphicon glyphicon-check",
+                checkboxUnknown: "glyphicon glyphicon-share",
+                dragHelper: "glyphicon glyphicon-play",
+                dropMarker: "glyphicon glyphicon-arrow-right",
+                error: "glyphicon glyphicon-warning-sign",
+                expanderClosed: "glyphicon glyphicon-menu-right",
+                expanderLazy: "glyphicon glyphicon-menu-right",  // glyphicon-plus-sign
+                expanderOpen: "glyphicon glyphicon-menu-down",  // glyphicon-collapse-down
+                folder: "glyphicon glyphicon-folder-close",
+                folderOpen: "glyphicon glyphicon-folder-open",
+                loading: "glyphicon glyphicon-refresh glyphicon-spin"
+            }
+        };
+        function callTreeView(targetId, sitePath) {
             $('#windowPathPicker').modal({
                 show: 'true'
             });
-            var actionUrl = "${currentNodePath}" + ".pickerPath.do";
-            $.getJSON( actionUrl, function( data ) {
-                $('#treeviewpath').treeview({
-                    color: "#428bca",
-                    expandIcon: 'glyphicon glyphicon-chevron-right',
-                    collapseIcon: 'glyphicon glyphicon-chevron-down',
-                    nodeIcon: 'glyphicon glyphicon-folder-close',
-                    data:  [data],
-                    onNodeSelected: function(event, node) {
-                        $("#" + targetId + "").val(node.href);
-                        $('#windowPathPicker').modal('toggle');;
-                    },
-                });
+            $.ajax({
+                url: "${currentNodePath}" +".pickerPath.do",
+                context: document.body,
+                dataType: "json",
+                data: {
+                    level: 2, //For the first we need 2 level the rest will be one.
+                    pagePath: sitePath
+                },
+            }).done(function(data) {
+
+                if(firstLoad){
+                    firstLoad =false;
+                    $("#treeviewpath").fancytree({
+                        extensions: [ "glyph"],
+                        activeVisible:true,
+                        source: data ,
+                        glyph: glyphOpts,
+                        lazyLoad: function(event, data) {
+                            var node = data.node;
+                            data.result = {
+                                url:"${currentNodePath}" +".pickerPath.do",
+                                context: document.body,
+                                dataType: "json",
+                                data: {
+                                    level: 2,
+                                    pagePath: node.data.href
+                                }
+                            };
+                        },
+                        postProcess: function(event, data) { //Important to get the Children table
+                            var response = data.response;
+                            if(response.children){
+                                data.result = response.children;
+                            }else{
+                                data.result = []; //No error if no children
+                            }
+                        },
+                        activate: function(event, data) {
+                            console.log(data.node);
+                            var node = data.node;
+                            $("#" + targetId + "").val(node.data.href);
+                            $('#windowPathPicker').modal('toggle');;
+                        }
+                    });
+                }
+
             });
-        }
+        };
     </script>
 </template:addResources>
 

@@ -31,13 +31,37 @@ public class PathPickerAction extends Action {
     @Override
     public ActionResult doExecute(HttpServletRequest req, RenderContext renderContext, Resource resource, JCRSessionWrapper session, Map<String, List<String>> parameters, URLResolver urlResolver) throws Exception {
         logger.debug("doExecute: begins the PathPickerAction action.");
+        int         level       =   Integer.parseInt(getParameter(parameters,"level")); //No value will be 0
+        String      path        =   getParameter(parameters,"pagePath");
+        String      sitePath    =   renderContext.getSite().getPath();
 
-        try {
-            return new ActionResult(HttpServletResponse.SC_OK, null, getSitePathJson(renderContext.getSite(),renderContext, new AtomicBoolean(true)));
-        }catch (Exception ex) {
-            logger.error("doExecute() PathPickerAction , Error:", ex);
+        if(path.contains(sitePath)){
+            JCRNodeWrapper node =   session.getNode(path);
+           try {
+               return new ActionResult(HttpServletResponse.SC_OK, null, getSitePathJson(node,renderContext, new AtomicBoolean(true),level));
+            }catch (Exception ex) {
+                logger.error("doExecute() PathPickerAction, Error,", ex);
+                return new ActionResult(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            }
+        }else{
+            logger.debug("The path : " + path + "is not part of the site path : " + sitePath);
             return new ActionResult(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
+    }
+
+
+    /**
+     * Replace Single Quote by ""
+     * @param toReplace
+     * @return
+     */
+    private String replaceSingleQuotes(String toReplace){
+        if(!StringUtils.isBlank(toReplace)){
+            return toReplace.replaceAll("'","");
+        }else{
+            return toReplace;
+        }
+
     }
 
     /**
@@ -49,57 +73,58 @@ public class PathPickerAction extends Action {
      * @return jsonString @String
      * @throws RepositoryException
      */
-    protected JSONObject getSitePathJson(JCRNodeWrapper node, RenderContext renderContext, AtomicBoolean displayable) throws RepositoryException {
-        if(JCRContentUtils.isADisplayableNode(node,renderContext)) {
-            displayable.set(true);
-        }
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("text",replaceSingleQuotes(node.getDisplayableName()));
-            jsonObject.put("href",node.getPath());
-            if(!JCRContentUtils.isADisplayableNode(node,renderContext)) {
-                jsonObject.put("selectable", false);
-                jsonObject.put("color", "\"#A9A9A9\"");
+    protected JSONObject getSitePathJson(JCRNodeWrapper node, RenderContext renderContext, AtomicBoolean displayable, int level) throws RepositoryException {
+        if(level>0 || level==-1)
+        {
+            if(JCRContentUtils.isADisplayableNode(node,renderContext)) {
+                displayable.set(true);
             }
-            List<JCRNodeWrapper> childNodeList = new ArrayList<JCRNodeWrapper>();
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("title",replaceSingleQuotes(node.getDisplayableName()));
+                jsonObject.put("href",node.getPath());
+                if(!JCRContentUtils.isADisplayableNode(node,renderContext)) {
+                    jsonObject.put("selectable", false);
+                    jsonObject.put("color", "\"#A9A9A9\"");
+                }
+                List<JCRNodeWrapper> childNodeList = new ArrayList<JCRNodeWrapper>();
 
-        /* getting the folder child nodes */
-            childNodeList = JCRContentUtils.getChildrenOfType(node, "nt:base");
+                /* getting the folder child nodes */
+                childNodeList = JCRContentUtils.getChildrenOfType(node, "nt:base");
 
-            if(childNodeList.size() > 0){
-                boolean hasChildren = false;
-                JSONArray childs = new JSONArray();
-                for(int index = 0; index < childNodeList.size(); index++) {
-                    AtomicBoolean isChildDisplayed = new AtomicBoolean(false);
-                    // We only push the child to the jsonBuilder is possesses a content template
-                    JSONObject temp = getSitePathJson(childNodeList.get(index), renderContext,isChildDisplayed);
-                    if (isChildDisplayed.get()) {
-                        // if the child is displayed, then the parent must be displayed too
-                        displayable.set(true);
-                        if(null!= temp){
-                            childs.put(temp);
-                            if (!hasChildren){
-                                jsonObject.put("nodes",childs);
+
+                if(childNodeList.size() > 0) {
+                    level--;
+                    boolean hasChildren = false;
+                    JSONArray childs = new JSONArray();
+                    jsonObject.put("lazy", true);
+                    for (int index = 0; index < childNodeList.size(); index++) {
+
+                        AtomicBoolean isChildDisplayed = new AtomicBoolean(false);
+                        // We only push the child to the jsonBuilder is possesses a content template
+                        JSONObject temp = getSitePathJson(childNodeList.get(index), renderContext, isChildDisplayed, level);
+                        if (isChildDisplayed.get()) {
+
+                            // if the child is displayed, then the parent must be displayed too
+                            displayable.set(true);
+                            if (null != temp) {
+                                childs.put(temp);
+                                if (!hasChildren) {
+                                    jsonObject.put("children", childs);
+                                }
+                                hasChildren = true;
                             }
-                            hasChildren = true;
                         }
+
                     }
                 }
+            } catch (JSONException e) {
+                logger.error(e.toString());
             }
-        } catch (JSONException e) {
-            logger.error("Error during the getSutePathJson : " + e.toString());
-        }
-        return jsonObject;
-    }
-
-    private String replaceSingleQuotes(String toReplace){
-        if(!StringUtils.isBlank(toReplace)){
-            return toReplace.replaceAll("'","");
+            return jsonObject;
         }else{
-            return toReplace;
+            return null;
         }
 
     }
-
-
 }
