@@ -84,8 +84,9 @@ public class PathPickerAction extends Action {
                 jsonObject.put("title",replaceSingleQuotes(node.getDisplayableName()));
                 jsonObject.put("href",node.getPath());
                 if(!JCRContentUtils.isADisplayableNode(node,renderContext)) {
-                    jsonObject.put("selectable", false);
-                    jsonObject.put("color", "\"#A9A9A9\"");
+                    jsonObject.put("noSelect", true);
+                }else{
+                    jsonObject.put("noSelect", false);
                 }
                 List<JCRNodeWrapper> childNodeList = new ArrayList<JCRNodeWrapper>();
 
@@ -123,6 +124,9 @@ public class PathPickerAction extends Action {
             }
             return jsonObject;
         }else{
+            if(JCRContentUtils.isADisplayableNode(node,renderContext)) {
+                displayable.set(true);
+            }
             return null;
         }
 

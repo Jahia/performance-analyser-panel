@@ -85,10 +85,15 @@
                             }
                         },
                         activate: function(event, data) {
-                            console.log(data.node);
                             var node = data.node;
                             $("#" + targetId + "").val(node.data.href);
                             $('#windowPathPicker').modal('toggle');;
+                        },
+                        beforeActivate: function(event, data){
+                            if(data.node.data.noSelect){
+                                alert("This element can not be selected");
+                                return false;
+                            }
                         }
                     });
                 }
