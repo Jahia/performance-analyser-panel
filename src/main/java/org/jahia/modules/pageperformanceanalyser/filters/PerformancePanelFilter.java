@@ -3,9 +3,6 @@ package org.jahia.modules.pageperformanceanalyser.filters;
 import org.jahia.exceptions.JahiaInitializationException;
 import org.jahia.services.cache.Cache;
 import org.jahia.services.cache.CacheService;
-import org.jahia.services.content.JCRCallback;
-import org.jahia.services.content.JCRSessionWrapper;
-import org.jahia.services.content.JCRTemplate;
 import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
 import org.jahia.services.render.filter.AbstractFilter;
@@ -13,8 +10,10 @@ import org.jahia.services.render.filter.RenderChain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class PerformancePanelFilter extends AbstractFilter {
 
@@ -29,6 +28,7 @@ public class PerformancePanelFilter extends AbstractFilter {
     public void setCacheService(CacheService cacheService) {
         this.cacheService = cacheService;
     }
+
     @Override
     public String prepare(RenderContext renderContext, Resource resource, RenderChain chain) throws Exception {
         Cache<Object, Object> cacheInstance = null;
@@ -47,9 +47,9 @@ public class PerformancePanelFilter extends AbstractFilter {
                     renderContext.getRequest().setAttribute("PageNameCachePerf", (String) cacheInstance.get(key));
                 } else if (key.equals("PagePathCachePerf")) {
                     renderContext.getRequest().setAttribute("PagePathCachePerf", (String) cacheInstance.get(key));
-                } else if (key.equals("TotalTimeSpent")){
+                } else if (key.equals("TotalTimeSpent")) {
                     renderContext.getRequest().setAttribute("TotalTimeSpent2", (Long) cacheInstance.get(key));
-                }else if (key.equals("flushCachePerf")){
+                } else if (key.equals("flushCachePerf")) {
                     renderContext.getRequest().setAttribute("flushCachePerf", (boolean) cacheInstance.get(key));
                 } else {
                     Map<String, String> infos = (Map<String, String>) cacheInstance.get(key);

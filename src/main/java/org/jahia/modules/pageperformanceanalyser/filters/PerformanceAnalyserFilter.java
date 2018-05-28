@@ -1,10 +1,6 @@
 package org.jahia.modules.pageperformanceanalyser.filters;
 
-import org.jahia.exceptions.JahiaInitializationException;
-import org.jahia.services.cache.Cache;
 import org.jahia.services.cache.CacheHelper;
-import org.jahia.services.cache.CacheService;
-import org.jahia.services.content.JCRNodeWrapper;
 import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
 import org.jahia.services.render.filter.AbstractFilter;
@@ -12,20 +8,20 @@ import org.jahia.services.render.filter.RenderChain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jcr.PropertyIterator;
-import javax.jcr.RepositoryException;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PerformanceAnalyserFilter extends AbstractFilter {
     private static final Logger logger = LoggerFactory.getLogger(PerformanceAnalyserFilter.class);
 
     /**
-     * @Description  This will get a new date at the moment of the request if there is
      * @param renderContext
      * @param resource
      * @param chain
      * @return
      * @throws Exception
+     * @Description This will get a new date at the moment of the request if there is
      */
 
     @Override
@@ -40,13 +36,13 @@ public class PerformanceAnalyserFilter extends AbstractFilter {
                 renderContext.getRequest().setAttribute("depth", "0");
             }
 
-            if(listCacheAlreadyFlush == null){
+            if (listCacheAlreadyFlush == null) {
                 listCacheAlreadyFlush = new HashMap<>();
-                renderContext.getRequest().setAttribute("listCacheAlreadyFlush",listCacheAlreadyFlush);
+                renderContext.getRequest().setAttribute("listCacheAlreadyFlush", listCacheAlreadyFlush);
             }
-            if(!listCacheAlreadyFlush.containsKey(ressourcePath)){
-                CacheHelper.flushOutputCachesForPath(ressourcePath,false);
-                listCacheAlreadyFlush.put(ressourcePath,true);
+            if (!listCacheAlreadyFlush.containsKey(ressourcePath)) {
+                CacheHelper.flushOutputCachesForPath(ressourcePath, false);
+                listCacheAlreadyFlush.put(ressourcePath, true);
             }
 
             String depth = String.valueOf(Integer.parseInt((String) renderContext.getRequest().getAttribute("depth")) + 1);
@@ -59,7 +55,7 @@ public class PerformanceAnalyserFilter extends AbstractFilter {
 
             //We do evertyhing before starting the timer
             objectRenderChainMap.put("date", new Date());
-            
+
         }
         return null;
     }
