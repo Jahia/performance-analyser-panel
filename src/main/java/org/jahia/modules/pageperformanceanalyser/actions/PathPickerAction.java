@@ -44,7 +44,7 @@ public class PathPickerAction extends Action {
                 return new ActionResult(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
         } else {
-            logger.debug("The path : " + path + "is not part of the site path : " + sitePath);
+            if(logger.isDebugEnabled()) logger.debug("The path : " + path + "is not part of the site path : " + sitePath);
             return new ActionResult(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }
@@ -119,7 +119,7 @@ public class PathPickerAction extends Action {
                     }
                 }
             } catch (JSONException e) {
-                logger.error(e.toString());
+                logger.error("An error occured while converting the pages hierachy into a JSON object", e);
             }
             return jsonObject;
         } else {
