@@ -47,58 +47,56 @@
             $('#windowPathPicker').modal({
                 show: 'true'
             });
-            $.ajax({
-                url: "${currentNodePath}" +".pickerPath.do",
-                context: document.body,
-                dataType: "json",
-                data: {
-                    level: 2, //For the first we need 2 level the rest will be one.
-                    pagePath: sitePath
-                },
-            }).done(function(data) {
-
-                if(firstLoad){
-                    firstLoad =false;
-                    $("#treeviewpath").fancytree({
-                        extensions: [ "glyph"],
-                        activeVisible:true,
-                        source: data ,
-                        glyph: glyphOpts,
-                        lazyLoad: function(event, data) {
-                            var node = data.node;
-                            data.result = {
-                                url:"${currentNodePath}" +".pickerPath.do",
-                                context: document.body,
-                                dataType: "json",
-                                data: {
-                                    level: 2,
-                                    pagePath: node.data.href
+            if(firstLoad){
+                $.ajax({
+                    url: "${currentNodePath}" +".pickerPath.do",
+                    context: document.body,
+                    dataType: "json",
+                    data: {
+                        level: 2, //For the first we need 2 level the rest will be one.
+                        pagePath: sitePath
+                    },
+                }).done(function(data) {
+                        firstLoad =false;
+                        $("#treeviewpath").fancytree({
+                            extensions: [ "glyph"],
+                            activeVisible:true,
+                            source: data ,
+                            glyph: glyphOpts,
+                            lazyLoad: function(event, data) {
+                                var node = data.node;
+                                data.result = {
+                                    url:"${currentNodePath}" +".pickerPath.do",
+                                    context: document.body,
+                                    dataType: "json",
+                                    data: {
+                                        level: 2,
+                                        pagePath: node.data.href
+                                    }
+                                };
+                            },
+                            postProcess: function(event, data) { //Important to get the Children table
+                                var response = data.response;
+                                if(response.children){
+                                    data.result = response.children;
+                                }else{
+                                    data.result = []; //No error if no children
                                 }
-                            };
-                        },
-                        postProcess: function(event, data) { //Important to get the Children table
-                            var response = data.response;
-                            if(response.children){
-                                data.result = response.children;
-                            }else{
-                                data.result = []; //No error if no children
+                            },
+                            activate: function(event, data) {
+                                var node = data.node;
+                                $("#" + targetId + "").val(node.data.href);
+                                $('#windowPathPicker').modal('toggle');;
+                            },
+                            beforeActivate: function(event, data){
+                                if(data.node.data.noSelect){
+                                    alert("This element can not be selected");
+                                    return false;
+                                }
                             }
-                        },
-                        activate: function(event, data) {
-                            var node = data.node;
-                            $("#" + targetId + "").val(node.data.href);
-                            $('#windowPathPicker').modal('toggle');;
-                        },
-                        beforeActivate: function(event, data){
-                            if(data.node.data.noSelect){
-                                alert("This element can not be selected");
-                                return false;
-                            }
-                        }
-                    });
-                }
-
-            });
+                        });
+                });
+            }
         };
     </script>
 </template:addResources>
