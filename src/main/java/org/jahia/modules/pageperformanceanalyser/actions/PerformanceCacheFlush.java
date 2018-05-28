@@ -1,6 +1,5 @@
 package org.jahia.modules.pageperformanceanalyser.actions;
 
-import org.apache.jackrabbit.commons.JcrUtils;
 import org.jahia.bin.Action;
 import org.jahia.bin.ActionResult;
 import org.jahia.services.cache.Cache;
@@ -8,8 +7,9 @@ import org.jahia.services.cache.CacheHelper;
 import org.jahia.services.cache.CacheService;
 import org.jahia.services.content.JCRNodeWrapper;
 import org.jahia.services.content.JCRSessionWrapper;
-import org.jahia.services.render.*;
-import org.jahia.taglibs.jcr.node.JCRTagUtils;
+import org.jahia.services.render.RenderContext;
+import org.jahia.services.render.Resource;
+import org.jahia.services.render.URLResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -26,13 +26,14 @@ public class PerformanceCacheFlush extends Action {
     public void setCacheService(CacheService cacheService) {
         this.cacheService = cacheService;
     }
+
     @Override
     public ActionResult doExecute(HttpServletRequest httpServletRequest, RenderContext renderContext, Resource resource, JCRSessionWrapper jcrSessionWrapper, Map<String, List<String>> map, URLResolver urlResolver) throws Exception {
 
-        String      path        =   getParameter(map,"path"); //Path of the page
-        boolean     flushPage   =   Boolean.parseBoolean(getParameter(map,"flush"));
-        JCRNodeWrapper page     =   jcrSessionWrapper.getNode(path);
-        String      pageName    =   page.getDisplayableName();
+        String path = getParameter(map, "path"); //Path of the page
+        boolean flushPage = Boolean.parseBoolean(getParameter(map, "flush"));
+        JCRNodeWrapper page = jcrSessionWrapper.getNode(path);
+        String pageName = page.getDisplayableName();
 
         Cache<Object, Object> cacheInstance = null;
 
@@ -40,12 +41,12 @@ public class PerformanceCacheFlush extends Action {
 
         cacheInstance.flush();
 
-        cacheInstance.put("PageNameCachePerf",pageName);
+        cacheInstance.put("PageNameCachePerf", pageName);
         cacheInstance.put("PagePathCachePerf", path);
         cacheInstance.put("flushCachePerf", flushPage);
         //We need to flush the page to go through the process. What if someone go the page at the same time?
-        if(flushPage){
-            CacheHelper.flushOutputCachesForPath(path,true);
+        if (flushPage) {
+            CacheHelper.flushOutputCachesForPath(path, true);
         }
 
 

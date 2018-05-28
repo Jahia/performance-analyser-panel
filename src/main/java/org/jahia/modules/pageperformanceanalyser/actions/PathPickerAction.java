@@ -31,20 +31,20 @@ public class PathPickerAction extends Action {
     @Override
     public ActionResult doExecute(HttpServletRequest req, RenderContext renderContext, Resource resource, JCRSessionWrapper session, Map<String, List<String>> parameters, URLResolver urlResolver) throws Exception {
         logger.debug("doExecute: begins the PathPickerAction action.");
-        int         level       =   Integer.parseInt(getParameter(parameters,"level")); //No value will be 0
-        String      path        =   getParameter(parameters,"pagePath");
-        String      sitePath    =   renderContext.getSite().getPath();
+        int level = Integer.parseInt(getParameter(parameters, "level")); //No value will be 0
+        String path = getParameter(parameters, "pagePath");
+        String sitePath = renderContext.getSite().getPath();
 
-        if(path.contains(sitePath)){
-            JCRNodeWrapper node =   session.getNode(path);
-           try {
-               return new ActionResult(HttpServletResponse.SC_OK, null, getSitePathJson(node,renderContext, new AtomicBoolean(true),level));
-            }catch (Exception ex) {
+        if (path.contains(sitePath)) {
+            JCRNodeWrapper node = session.getNode(path);
+            try {
+                return new ActionResult(HttpServletResponse.SC_OK, null, getSitePathJson(node, renderContext, new AtomicBoolean(true), level));
+            } catch (Exception ex) {
                 logger.error("doExecute() PathPickerAction, Error,", ex);
                 return new ActionResult(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
-        }else{
-            logger.debug("The path : " + path + "is not part of the site path : " + sitePath);
+        } else {
+            if(logger.isDebugEnabled()) logger.debug("The path : " + path + "is not part of the site path : " + sitePath);
             return new ActionResult(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }
@@ -52,13 +52,14 @@ public class PathPickerAction extends Action {
 
     /**
      * Replace Single Quote by ""
+     *
      * @param toReplace
      * @return
      */
-    private String replaceSingleQuotes(String toReplace){
-        if(!StringUtils.isBlank(toReplace)){
-            return toReplace.replaceAll("'","");
-        }else{
+    private String replaceSingleQuotes(String toReplace) {
+        if (!StringUtils.isBlank(toReplace)) {
+            return toReplace.replaceAll("'", "");
+        } else {
             return toReplace;
         }
 
@@ -68,24 +69,22 @@ public class PathPickerAction extends Action {
      * getSitePathJson
      * <p>The method returns a json with the tree under a specific node.</p>
      *
-     *
      * @param node @JCRNodeWrapper
      * @return jsonString @String
      * @throws RepositoryException
      */
     protected JSONObject getSitePathJson(JCRNodeWrapper node, RenderContext renderContext, AtomicBoolean displayable, int level) throws RepositoryException {
-        if(level>0 || level==-1)
-        {
-            if(JCRContentUtils.isADisplayableNode(node,renderContext)) {
+        if (level > 0 || level == -1) {
+            if (JCRContentUtils.isADisplayableNode(node, renderContext)) {
                 displayable.set(true);
             }
             JSONObject jsonObject = new JSONObject();
             try {
-                jsonObject.put("title",replaceSingleQuotes(node.getDisplayableName()));
-                jsonObject.put("href",node.getPath());
-                if(!JCRContentUtils.isADisplayableNode(node,renderContext)) {
+                jsonObject.put("title", replaceSingleQuotes(node.getDisplayableName()));
+                jsonObject.put("href", node.getPath());
+                if (!JCRContentUtils.isADisplayableNode(node, renderContext)) {
                     jsonObject.put("noSelect", true);
-                }else{
+                } else {
                     jsonObject.put("noSelect", false);
                 }
                 List<JCRNodeWrapper> childNodeList = new ArrayList<JCRNodeWrapper>();
@@ -94,7 +93,7 @@ public class PathPickerAction extends Action {
                 childNodeList = JCRContentUtils.getChildrenOfType(node, "nt:base");
 
 
-                if(childNodeList.size() > 0) {
+                if (childNodeList.size() > 0) {
                     level--;
                     boolean hasChildren = false;
                     JSONArray childs = new JSONArray();
@@ -120,11 +119,11 @@ public class PathPickerAction extends Action {
                     }
                 }
             } catch (JSONException e) {
-                logger.error(e.toString());
+                logger.error("An error occured while converting the pages hierachy into a JSON object", e);
             }
             return jsonObject;
-        }else{
-            if(JCRContentUtils.isADisplayableNode(node,renderContext)) {
+        } else {
+            if (JCRContentUtils.isADisplayableNode(node, renderContext)) {
                 displayable.set(true);
             }
             return null;
