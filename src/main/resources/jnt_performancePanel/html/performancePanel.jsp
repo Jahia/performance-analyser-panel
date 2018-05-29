@@ -19,7 +19,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="javascript" resources="jquery.js,jquery.tablersorter.widget.js,Chart.js,jquery.tablesorter.js,performancePanel.js"/>
 <template:addResources type="css" resources="bootstrap/bootstrap.css,content-report-style.css,tableSorter.css"/>
-<c:url value="${url.baseEdit}${currentResource.node.path}" var="detailDisplayUrl" />
+<c:url value="${url.baseEdit}${renderContext.site.path}" var="detailDisplayUrl" />
 
 
 <div style="margin: 3%" >
@@ -31,7 +31,7 @@
                     $("#perfTable")
                         .tablesorter( {sortList: [[4,1]]} )
                         .tablesorterPager({container: $(".pager"), output:'{page}/{totalPages}'});
-                    change('pie','${detailDisplayUrl}');
+                    change('pie',$('#pathTxtRDA').val(),'${renderContext.site.path}');
 
                     //Let show the number in the language property
                     $('.number').each(function () {
@@ -189,8 +189,8 @@
             <div>
                 <h1 id="titleChart"></h1>
                 <div class="category-chart" style="text-align: right;">
-                    <button id='pie' onclick="change('pie','${detailDisplayUrl}')" class="btn-small"><fmt:message key="pagePerformanceAnalyser.pie"/> </button>
-                    <button id='bar' onclick="change('horizontalBar','${detailDisplayUrl}')" class="btn-small"><fmt:message key="pagePerformanceAnalyser.bar"/></button>
+                    <button id='pie' onclick="change('pie',$('#pathTxtRDA').val(),'${renderContext.site.path}')" class="btn-small"><fmt:message key="pagePerformanceAnalyser.pie"/> </button>
+                    <button id='bar' onclick="change('horizontalBar',$('#pathTxtRDA').val(),'${renderContext.site.path}')" class="btn-small"><fmt:message key="pagePerformanceAnalyser.bar"/></button>
                     <label class="labels"><fmt:message key="pagePerformanceAnalyser.elements"/> </label>
                     <select id="numberOfElement" style="width: auto">
                         <option value="5">5</option>

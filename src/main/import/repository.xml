@@ -17,6 +17,7 @@
                     <site-settings-base j:view="siteSettings" jcr:primaryType="jnt:template">
                         <performance-panel j:defaultTemplate="false"
                                   j:hiddenTemplate="false"
+                                  j:requiredPermissionNames="runPagePerformanceAnalyse"
                                   j:titleKey="performancePanelPerformanceAnalyser"
                                   jcr:mixinTypes="jmix:rbTitle"
                                   jcr:primaryType="jnt:contentTemplate"/>
