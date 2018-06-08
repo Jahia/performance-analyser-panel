@@ -102,18 +102,30 @@ function runPerformancePanel(path, sitePath, flush){
         $.ajax({
             url:path +".perfCacheFlush.do",
             context: document.body,
+            dataType:'json',
             data: {
                 path: path,
                 flush: flush
             },
-            success: function(){
-                $.ajax({ url: path + ".html?perfAnalyse",
-                    context: document.body,
-                    success: function(){
-                        setTimeout(location.reload(), 7000);
+            success: function(data){
+                if(data["PageNotPublish"]){
+                    alert("Please select a page that has been published");
+                    removeLoader();
+                    return;
+                }else{
+                    $.ajax({ url: path + ".html?perfAnalyse",
+                        context: document.body,
+                        success: function(){
+                            setTimeout(location.reload(), 7000);
 
-                    }
-                });
+                        }
+                    });
+                }
+
+            },
+            error: function(){
+                removeLoader();
+                alert("Sorry, something went wrong. Please make sure that the page you are using is published");
             }
         })
     }

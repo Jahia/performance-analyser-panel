@@ -38,8 +38,8 @@
                 expanderClosed: "glyphicon glyphicon-menu-right",
                 expanderLazy: "glyphicon glyphicon-menu-right",  // glyphicon-plus-sign
                 expanderOpen: "glyphicon glyphicon-menu-down",  // glyphicon-collapse-down
-                folder: "glyphicon glyphicon-folder-close",
-                folderOpen: "glyphicon glyphicon-folder-open",
+                folder: "glyphicon glyphicon-warning-sign",
+                folderOpen: "glyphicon glyphicon-warning-sign",
                 loading: "glyphicon glyphicon-refresh glyphicon-spin"
             }
         };
@@ -60,6 +60,11 @@
                         firstLoad =false;
                         $("#treeviewpath").fancytree({
                             extensions: [ "glyph"],
+                            icon: function(event, data) {
+                                if (data.node.noSelect) {
+                                    return "glyphicon glyphicon-warning-sign";
+                                }
+                            },
                             activeVisible:true,
                             source: data ,
                             glyph: glyphOpts,
@@ -85,8 +90,13 @@
                             },
                             activate: function(event, data) {
                                 var node = data.node;
-                                $("#" + targetId + "").val(node.data.href);
-                                $('#windowPathPicker').modal('toggle');;
+                                if(data.node.noSelect){
+                                    alert("You can not select this node");
+                                }else{
+                                    $("#" + targetId + "").val(node.data.href);
+                                    $('#windowPathPicker').modal('toggle');;
+                                }
+
                             },
                             beforeActivate: function(event, data){
                                 if(data.node.data.noSelect){
