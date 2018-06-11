@@ -58,8 +58,8 @@
   <artifactId>page-performance-analyzer</artifactId>
   <version>1.0.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>page-performance-analyzer</name>
-  <description>This is the custom module (page-performance-analyzer) for running on a Digital Experience Manager server.</description>
+  <name>Page Performance Analyzer</name>
+  <description>The Page Performance Analyzer module defines a new panel in the Site Settings in order to analyze the performances of a selected page.</description>
   <scm>
     <connection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</connection>
     <developerConnection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</developerConnection>
@@ -82,16 +82,4 @@
       <url>https://devtools.jahia.com/nexus/content/groups/public</url>
     </repository>
   </repositories>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions />
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
