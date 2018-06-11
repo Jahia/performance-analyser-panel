@@ -34,3 +34,10 @@ These graphs can be show as a bar charts, and the number of elements to show can
 ![Bar Infos](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/8.png "BarInfos")
 
 
+## Changelog
+Version | Required DX version | Changes
+------------ | -------------| -------------
+1.0.0 | 7.1.0.0 | Initial version
+1.0.1 | 7.1.0.0 | Allow users to pick contents, not only pages
+1.1.0 | 7.1.0.0 | Improved the performances of the page picker (UI)<br/>Fixed a bug preventing to use the panel with another user than root.<br/>Correctly handle the case when the selected page can't be tested (usually because not published)
+
