@@ -14,7 +14,7 @@ Then just select the page you want from your webSite on the tree:
 ![Pages Selector](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/3.png "PagesSelector")
 
 ### Run & Analyse
-To run the page analyse, you have to press on :
+To run the page analyse, you can choose to flush the cache or not, you have to press on :
 ![Launch Button ](https://github.com/Jahia/performance-analyser-panel/blob/master/readmeImg/4.png "LaunchButton")
 
 Then you will see on the top all the information, that corresponds to the total time take to load all the elements, the number of elements and the name of the page.
