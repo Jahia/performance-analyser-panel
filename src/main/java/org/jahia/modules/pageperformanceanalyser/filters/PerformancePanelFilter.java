@@ -32,7 +32,7 @@ public class PerformancePanelFilter extends AbstractFilter {
     @Override
     public String prepare(RenderContext renderContext, Resource resource, RenderChain chain) throws Exception {
         Cache<Object, Object> cacheInstance = null;
-        ArrayList<String> cacheList = new ArrayList<String>();
+        final ArrayList<FragmentInfos> cacheList = new ArrayList<FragmentInfos>();
         Map<String, Long> data = new HashMap<String, Long>();
         int totalElement = 0;
         int totalTimeSpent = 0;
@@ -60,7 +60,7 @@ public class PerformancePanelFilter extends AbstractFilter {
                     if (infos.get("timeSpent") != null) {
                         data.put(infos.get("j:nodename"), Long.parseLong(infos.get("timeSpent")));
                     }
-                    cacheList.add(infos.get("path") + "__" + infos.get("jcr:uuid") + "__" + infos.get("jcr:primaryType") + "__" + infos.get("j:nodename") + "__" + infos.get("timeSpent"));
+                    cacheList.add(new FragmentInfos(infos.get("path"), infos.get("jcr:uuid"), infos.get("jcr:primaryType"), infos.get("j:nodename"), infos.get("timeSpent")));
                 }
 
             }
@@ -76,5 +76,37 @@ public class PerformancePanelFilter extends AbstractFilter {
         return null;
 
 
+    }
+
+    public class FragmentInfos {
+        private String path, identifier, primaryType, nodename, timeSpent;
+
+        FragmentInfos(String path, String identifier, String primaryType, String nodename, String timeSpent) {
+            this.path = path;
+            this.identifier = identifier;
+            this.primaryType = primaryType;
+            this.nodename = nodename;
+            this.timeSpent = timeSpent;
+        }
+
+        public String getPath() {
+            return path;
+        }
+
+        public String getIdentifier() {
+            return identifier;
+        }
+
+        public String getPrimaryType() {
+            return primaryType;
+        }
+
+        public String getNodename() {
+            return nodename;
+        }
+
+        public String getTimeSpent() {
+            return timeSpent;
+        }
     }
 }

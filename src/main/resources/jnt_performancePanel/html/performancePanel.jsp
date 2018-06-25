@@ -154,14 +154,14 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${cacheList}" var="item">
-                    <c:set var="splitString" value="${fn:split(item,'__')}" />
+                <c:forEach items="${cacheList}" var="fragment">
+                    <%--@elvariable id="fragment" type="org.jahia.modules.pageperformanceanalyser.filters.PerformancePanelFilter.FragmentInfos"--%>
                     <tr>
-                        <td>${splitString[1]}</td>
-                        <td>${splitString[0]}</td>
-                        <td>${splitString[2]}</td>
-                        <td>${splitString[3]}</td>
-                        <td class="number">${splitString[4]}</td>
+                        <td>${fragment.identifier}</td>
+                        <td>${fragment.path}</td>
+                        <td>${fragment.primaryType}</td>
+                        <td>${fragment.nodename}</td>
+                        <td class="number">${fragment.timeSpent}</td>
                     </tr>
                 </c:forEach>
             </tbody>
