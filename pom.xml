@@ -49,7 +49,7 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>7.1.0.0</version>
+    <version>7.1.0.0</version> <!-- TODO : when updating to 7.2.0.0 , remove the property overriding the version of the maven release plugin -->
   </parent>
   <groupId>org.jahia.modules</groupId>
 
@@ -67,6 +67,7 @@
   </scm>
   <properties>
     <jahia-depends>bootstrap3-components,bootstrap3-core,default</jahia-depends>
+    <release.plugin.version>2.5.3-jahia1</release.plugin.version>
   </properties>
   <repositories>
     <repository>
