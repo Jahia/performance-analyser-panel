@@ -63,7 +63,13 @@ public class GetElementForGraphs extends Action {
 
         //Loop to get only the number of element I want
         if (numberOfElementToShow != -1) {
-            if (numberOfElementToShow < keys.size() - 1) {
+            // we only get the one key (which happens when the cache is activated)
+            if (keys.size() == 1){
+                String[] tableKey = keys.get(0).split("__/__");
+                keyToSend.add(tableKey[0]);
+                keysToDisplay.add(tableKey[1]);
+                dataToSend.add(data.get(keys.get(0)));
+            }else if (numberOfElementToShow < keys.size() - 1) {
                 for (int i = keys.size() - 1; i >= keys.size() - 1 - numberOfElementToShow; i--) {
                     String[] tableKey = keys.get(i).split("__/__");
                     keyToSend.add(tableKey[0]);
