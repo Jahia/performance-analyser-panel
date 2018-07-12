@@ -69,6 +69,13 @@
     <jahia-depends>bootstrap3-components,bootstrap3-core,default</jahia-depends>
     <release.plugin.version>2.5.3-jahia1</release.plugin.version>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+      <version>3.9.1</version>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <releases>

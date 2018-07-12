@@ -17,7 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<template:addResources type="javascript" resources="jquery.js,jquery.tablersorter.widget.js,Chart.js,jquery.tablesorter.js,performancePanel.js"/>
+<template:addResources type="javascript" resources="jquery.js,jquery.tablersorter.widget.js,Chart.js,jquery.tablesorter.js,js.cookie.js,performancePanel.js"/>
 <template:addResources type="css" resources="bootstrap/bootstrap.css,content-report-style.css,tableSorter.css"/>
 <c:url value="${url.baseEdit}${renderContext.site.path}" var="detailDisplayUrl" />
 
@@ -79,10 +79,13 @@
                     </c:otherwise>
                 </c:choose>
 
-                <label for="flushCacheCheck"><fmt:message key="pagePerformanceAnalyser.flushCache"/></label>
+                <label class="checkboxLabel" for="flushCacheCheck"><fmt:message key="pagePerformanceAnalyser.flushCache"/></label>
+                </div><div class="boxes">
+                <input type="checkbox" id="guestRequest" >
+                <label class="checkboxLabel" for="guestRequest"><fmt:message key="pagePerformanceAnalyser.guest"/></label>
             </div>
             </br>
-            <button type="button" class="btn btn-lg btn-success" onclick="runPerformancePanel($('#pathTxtRDA').val(), '${renderContext.site.path}', $('#flushCacheCheck').is(':checked'))">
+            <button type="button" class="btn btn-lg btn-success" onclick="runPerformancePanel($('#pathTxtRDA').val(), '${renderContext.site.path}', $('#flushCacheCheck').is(':checked'), $('#guestRequest').is(':checked'))">
                 <fmt:message key="pagePerformanceAnalyser.launch"/>&nbsp;
                 <span class="glyphicon glyphicon-ok"></span>
             </button>

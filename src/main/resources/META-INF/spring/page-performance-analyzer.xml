@@ -32,4 +32,10 @@
     <bean class="org.jahia.modules.pageperformanceanalyser.actions.PathPickerAction">
         <property name="name" value="pickerPath" />
     </bean>
+
+    <bean class="org.jahia.modules.pageperformanceanalyser.actions.RequestPageAction">
+        <property name="name" value="requestPage" />
+    </bean>
+
+
 </beans>

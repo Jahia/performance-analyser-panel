@@ -12,6 +12,8 @@ import org.jahia.services.render.URLResolver;
 import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -33,6 +35,9 @@ public class GetElementForGraphs extends Action {
 
     @Override
     public ActionResult doExecute(HttpServletRequest httpServletRequest, RenderContext renderContext, Resource resource, JCRSessionWrapper jcrSessionWrapper, Map<String, List<String>> map, URLResolver urlResolver) throws Exception {
+
+        URL url = new URL("http://localhost:8080/sites/digitall/home.html");
+        URLConnection test = url.openConnection();
 
         int numberOfElementToShow = Integer.parseInt(getParameter(map, "numberOfElement"));   //Number of Element in the graph
         Map<String, Long> data = new HashMap<>();

@@ -517,3 +517,18 @@ div #windowPathPicker{
     padding: 40px;
 }
 
+.boxes .checkboxLabel:before{
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+}
+
+.boxes input[type="checkbox"]:checked + .checkboxLabel:before{
+    margin-right: 16px;
+    left: 3px;
+}
+
+.selectPage .boxes {
+    width: auto;
+}
+

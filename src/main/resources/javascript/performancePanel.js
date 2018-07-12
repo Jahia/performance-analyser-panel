@@ -92,13 +92,14 @@ function change(newType, url, urlSite) {
 };
 
 
-function runPerformancePanel(path, sitePath, flush){
+function runPerformancePanel(path, sitePath, flush, guestRequest){
     $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
     if(path == sitePath || !path.includes(sitePath)){
         alert("Please select a page from the current site");
         removeLoader();
         return;
     }else{
+
         $.ajax({
             url:path +".perfCacheFlush.do",
             context: document.body,
@@ -113,7 +114,12 @@ function runPerformancePanel(path, sitePath, flush){
                     removeLoader();
                     return;
                 }else{
-                    $.ajax({ url: path + ".html?perfAnalyse",
+                    if (guestRequest){
+                        ajaxHttpUrl=path + ".requestPage.do";
+                    }else{
+                        ajaxHttpUrl=path + ".html?perfAnalyse";
+                    }
+                    $.ajax({ url: ajaxHttpUrl,
                         context: document.body,
                         success: function(){
                             setTimeout(location.reload(), 7000);
