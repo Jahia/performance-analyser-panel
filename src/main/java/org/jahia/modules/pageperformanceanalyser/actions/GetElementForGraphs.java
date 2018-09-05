@@ -78,13 +78,17 @@ public class GetElementForGraphs extends Action {
                 }
             } else {
                 for (int i = 0; i <= keys.size() - 1; i++) {
-                    keyToSend.add(keys.get(i));
+                    String[] tableKey = keys.get(i).split("__/__");
+                    keyToSend.add(tableKey[0]);
+                    keysToDisplay.add(tableKey[1]);
                     dataToSend.add(data.get(keys.get(i)));
                 }
             }
         } else {
             for (int i = 0; i <= keys.size() - 1; i++) {
-                keyToSend.add(keys.get(i));
+                String[] tableKey = keys.get(i).split("__/__");
+                keyToSend.add(tableKey[0]);
+                keysToDisplay.add(tableKey[1]);
                 dataToSend.add(data.get(keys.get(i)));
             }
         }
