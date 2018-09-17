@@ -20,6 +20,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class GetElementForGraphs extends Action {
+    public final static String separator = "__/__";
+
     private CacheService cacheService;
 
 
@@ -45,7 +47,7 @@ public class GetElementForGraphs extends Action {
                 if (cacheInstance.get(key) != null) {
                     Map<String, String> infos = (Map<String, String>) cacheInstance.get(key);
                     if (infos.get("timeSpent") != null) {
-                        data.put(key + "__/__" + infos.get("j:nodename"), Long.parseLong(infos.get("timeSpent")));
+                        data.put(key + separator + infos.get("j:nodename"), Long.parseLong(infos.get("timeSpent")));
                     }
                 }
 
@@ -65,31 +67,19 @@ public class GetElementForGraphs extends Action {
         if (numberOfElementToShow != -1) {
             // we only get the one key (which happens when the cache is activated)
             if (keys.size() == 1){
-                String[] tableKey = keys.get(0).split("__/__");
-                keyToSend.add(tableKey[0]);
-                keysToDisplay.add(tableKey[1]);
-                dataToSend.add(data.get(keys.get(0)));
+                fillLists(keys,keyToSend,keysToDisplay,dataToSend,data,0);
             }else if (numberOfElementToShow < keys.size() - 1) {
                 for (int i = keys.size() - 1; i >= keys.size() - 1 - numberOfElementToShow; i--) {
-                    String[] tableKey = keys.get(i).split("__/__");
-                    keyToSend.add(tableKey[0]);
-                    keysToDisplay.add(tableKey[1]);
-                    dataToSend.add(data.get(keys.get(i)));
+                    fillLists(keys,keyToSend,keysToDisplay,dataToSend,data,i);
                 }
             } else {
                 for (int i = 0; i <= keys.size() - 1; i++) {
-                    String[] tableKey = keys.get(i).split("__/__");
-                    keyToSend.add(tableKey[0]);
-                    keysToDisplay.add(tableKey[1]);
-                    dataToSend.add(data.get(keys.get(i)));
+                    fillLists(keys,keyToSend,keysToDisplay,dataToSend,data,i);
                 }
             }
         } else {
             for (int i = 0; i <= keys.size() - 1; i++) {
-                String[] tableKey = keys.get(i).split("__/__");
-                keyToSend.add(tableKey[0]);
-                keysToDisplay.add(tableKey[1]);
-                dataToSend.add(data.get(keys.get(i)));
+                fillLists(keys,keyToSend,keysToDisplay,dataToSend,data,i);
             }
         }
 
@@ -103,5 +93,14 @@ public class GetElementForGraphs extends Action {
 
 
     }
+
+    private void fillLists(List<String> keys, List<String> keyToSend, List<String> keysToDisplay, List<Object> dataToSend,  Map<String, Long> data, int i){
+        String[] tableKey = keys.get(i).split(separator);
+        keyToSend.add(tableKey[0]);
+        keysToDisplay.add(tableKey[1]);
+        dataToSend.add(data.get(keys.get(i)));
+
+    }
+
 }
 
