@@ -41,4 +41,5 @@ Version | Required DX version | Changes
 1.0.1 | 7.1.0.0 | Allow users to pick contents, not only pages
 1.1 | 7.1.0.0 | Improved the performances of the page picker (UI)<br/>Fixed a bug preventing to use the panel with another user than root.<br/>Correctly handle the case when the selected page can't be tested (usually because not published)
 1.2 | 7.1.0.0 | Fixed a display bug with fragments for which the currentNode has a double underscore in its path
+1.3 | 7.3.0.0 | 
 
