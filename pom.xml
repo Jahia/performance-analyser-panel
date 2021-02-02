@@ -89,7 +89,6 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <_dsannotations>*</_dsannotations>
             <Jahia-Source-Folders>${dockerSourcePath}/performance-analyser-panel</Jahia-Source-Folders>
           </instructions>
 
