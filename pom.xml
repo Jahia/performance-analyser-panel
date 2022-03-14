@@ -44,70 +44,62 @@
         please contact the sales department at sales@jahia.com.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.jahia.modules</groupId>
-    <artifactId>jahia-modules</artifactId>
-    <version>8.0.1.0</version>
-  </parent>
-  <groupId>org.test.jahia.modules</groupId>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jahia.modules</groupId>
+        <artifactId>jahia-modules</artifactId>
+        <version>8.0.1.0</version>
+    </parent>
 
-  <artifactId>page-performance-analyzer</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
-  <packaging>bundle</packaging>
-  <name>Page Performance Analyzer</name>
-  <description>The Page Performance Analyzer module defines a new panel in the Site Settings in order to analyze the performances of a selected page.</description>
-  <scm>
-    <connection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</connection>
-    <developerConnection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-  <properties>
-    <jahia-depends>bootstrap3-components,bootstrap3-core,default</jahia-depends>
-    <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
-  </properties>
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>jahia-public</id>
-      <name>Jahia Public Repository</name>
-      <url>https://devtools.jahia.com/nexus/content/groups/public</url>
-    </repository>
-  </repositories>
-  <profiles>
-    <profile>
-      <id>docker</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>maven-bundle-plugin</artifactId>
-            <extensions>true</extensions>
-            <configuration>
-              <instructions>
-                <Jahia-Source-Folders>${dockerSourcePath}/performance-analyser-panel</Jahia-Source-Folders>
-              </instructions>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-  <distributionManagement>
-    <repository>
-      <id>ps-releases</id>
-      <url>https://devtools.jahia.com/nexus/content/repositories/jahia-professional-services-public-repository</url>
-    </repository>
-    <snapshotRepository>
-      <id>ps-snapshots</id>
-      <url>https://devtools.jahia.com/nexus/content/repositories/jahia-professional-services-private-repository</url>
-    </snapshotRepository>
-  </distributionManagement>
+    <artifactId>page-performance-analyzer</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>Page Performance Analyzer</name>
+    <description>The Page Performance Analyzer module defines a new panel in the Site Settings in order to analyze the
+        performances of a selected page.
+    </description>
+
+    <scm>
+        <connection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</connection>
+        <developerConnection>scm:git:git@github.com:Jahia/performance-analyser-panel.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <jahia-depends>bootstrap3-components,bootstrap3-core,default</jahia-depends>
+        <jahia-module-signature>MCwCFHEGwG9//fSq78b456IfH16r9auIAhQgTSuQeVi2DLWVU28T/mjeUOH/kQ==
+        </jahia-module-signature>
+        <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"
+        </require-capability>
+    </properties>
+  
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jahia-public</id>
+            <name>Jahia Public Repository</name>
+            <url>https://devtools.jahia.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>ps-releases</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-professional-services-public-repository
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>ps-snapshots</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-professional-services-private-repository
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
