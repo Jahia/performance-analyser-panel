@@ -22,14 +22,17 @@
         <property name="requiredPermission" value="runPagePerformanceAnalyse"/>
         <property name="name" value="getElementForGraph"/>
         <property name="cacheService" ref="JahiaCacheService"/>
+        <property name="requiredMethods" value="GET,POST" />
     </bean>
     <bean class="org.jahia.modules.pageperformanceanalyser.actions.PerformanceCacheFlush">
         <property name="requiredPermission" value="runPagePerformanceAnalyse"/>
         <property name="name" value="perfCacheFlush"/>
         <property name="cacheService" ref="JahiaCacheService"/>
+        <property name="requiredMethods" value="GET,POST" />
     </bean>
 
     <bean class="org.jahia.modules.pageperformanceanalyser.actions.PathPickerAction">
         <property name="name" value="pickerPath" />
+        <property name="requiredMethods" value="GET,POST" />
     </bean>
 </beans>
