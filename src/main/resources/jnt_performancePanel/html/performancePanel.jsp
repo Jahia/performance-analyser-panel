@@ -50,7 +50,7 @@
     <c:if test="${not empty PageNameCachePerf}">
         <c:set var="pageName" value="${PageNameCachePerf}"/>
     </c:if>
-    <c:set value="${renderContext.site.path}" var="pagePath"/>
+    <c:set value="${renderContext.site.home.path}" var="pagePath"/>
     <c:if test="${not empty PagePathCachePerf}">
         <c:set var="pagePath" value="${PagePathCachePerf}"/>
     </c:if>
