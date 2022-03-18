@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/xhtml;charset=UTF-8" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -66,22 +66,22 @@
                     <span class="glyphicon glyphicon-folder-open"></span>
                     &nbsp;<fmt:message key="pagePerformanceAnalyser.choosePageToAnalyse"/>
                 </button>
-                <input type="text" id="pathTxtRDA" name="pathTxtRDA" class="pageInput" readonly="true" value="${pagePath}" >
+                <input type="text" id="pathTxtRDA" name="pathTxtRDA" class="pageInput" readonly="readonly" value="${pagePath}" />
             </div>
             <!-- Flush Cache Checkbox, check the box if empty  -->
             <div class="boxes">
                 <c:choose >
                     <c:when test="${flushCachePerf}">
-                        <input type="checkbox" id="flushCacheCheck"  checked >
+                        <input type="checkbox" id="flushCacheCheck"  checked="checked" />
                     </c:when>
                     <c:otherwise>
-                        <input type="checkbox" id="flushCacheCheck" >
+                        <input type="checkbox" id="flushCacheCheck" />
                     </c:otherwise>
                 </c:choose>
 
                 <label for="flushCacheCheck"><fmt:message key="pagePerformanceAnalyser.flushCache"/></label>
             </div>
-            </br>
+            <br />
             <button type="button" class="btn btn-lg btn-success" onclick="runPerformancePanel($('#pathTxtRDA').val(), '${renderContext.site.path}', $('#flushCacheCheck').is(':checked'))">
                 <fmt:message key="pagePerformanceAnalyser.launch"/>&nbsp;
                 <span class="glyphicon glyphicon-ok"></span>
@@ -96,7 +96,7 @@
         </div>
         <div class="card-content">
             <p class="category"> <fmt:message key="pagePerformanceAnalyser.title.totalTime"/></p>
-            <h3 class="card-title"><span class="number">${TotalTimeSpent2}</span> <fmt:message key="pagePerformanceAnalyser.title.ms"/> <p class="category"> </h3>
+            <h3 class="card-title"><span class="number">${TotalTimeSpent2}</span> <fmt:message key="pagePerformanceAnalyser.title.ms"/> <p class="category"></p> </h3>
         </div>
         <div class="card-footer">
             <div class="stats">
@@ -171,11 +171,11 @@
     <!-- pager for the table -->
     <div class="pager">
         <form>
-            <span class="btn-small first"><<</span>
-            <span class="btn-small prev" alt="<"><</span>
-            <input type="text" class="pagedisplay pageInfo" style="text-align: center" disabled>
-            <span class="btn-small next" alt=">">></span>
-            <span class="btn-small last" alt=">>">>></span>
+            <span class="btn-small first">&lt;&lt;</span>
+            <span class="btn-small prev">&lt;</span>
+            <input type="text" class="pagedisplay pageInfo" style="text-align: center" disabled="disabled" />
+            <span class="btn-small next">&gt;</span>
+            <span class="btn-small last">&gt;&gt;</span>
         </form>
     </div>
 
