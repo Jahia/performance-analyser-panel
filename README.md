@@ -35,11 +35,11 @@ These graphs can be show as a bar charts, and the number of elements to show can
 
 
 ## Changelog
-Version | Required DX version | Changes
------------- | -------------| -------------
-1.0.0 | 7.1.0.0 | Initial version
-1.0.1 | 7.1.0.0 | Allow users to pick contents, not only pages
-1.1 | 7.1.0.0 | Improved the performances of the page picker (UI)<br/>Fixed a bug preventing to use the panel with another user than root.<br/>Correctly handle the case when the selected page can't be tested (usually because not published)
-1.2 | 7.1.0.0 | Fixed a display bug with fragments for which the currentNode has a double underscore in its path
-1.3 | 7.3.0.0 | 
+| Version | Required DX version | Changes                                                                                                                                                                                                                                          |
+|---------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.0.0   | 7.1.0.0             | Initial version                                                                                                                                                                                                                                  |
+| 1.0.1   | 7.1.0.0             | Allow users to pick contents, not only pages                                                                                                                                                                                                     |
+| 1.1     | 7.1.0.0             | Improved the performances of the page picker (UI)<br/>[bugfix] Fixed a bug preventing to use the panel with another user than root<br/>[bugfix] Correctly handle the case when the selected page can't be tested (usually because not published) |
+| 1.2     | 7.1.0.0             | Fixed a display bug with fragments for which the currentNode has a double underscore in its path                                                                                                                                                 |
+| 2.0     | 8.0.1.0             | Prefill the form with the home page path<br/>[bugfix] fixed class behavior when the cache is activated                                                                                                                                           | 
 
