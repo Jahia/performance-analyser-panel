@@ -2,7 +2,7 @@
 window.jahia.i18n.loadNamespaces('page-performance-analyzer');
 
 window.jahia.uiExtender.registry.add('adminRoute', 'performanceanalyzer', {
-    targets: ['administration-sites:10'],
+    targets: ['administration-sites:20'],
     label: 'page-performance-analyzer:panel-title',
     isSelectable: true,
     requiredPermission: 'siteAdminUsers',
